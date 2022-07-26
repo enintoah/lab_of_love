@@ -11,7 +11,7 @@ const userProfilesReducer = (state = {}, action) => {
     case RECEIVE_USER_PROFILE:
      
     case RECEIVE_USER_PROFILES:
-      
+      return action.profiles.data
     case RECEIVE_USER_LOGOUT: 
 
     default:
