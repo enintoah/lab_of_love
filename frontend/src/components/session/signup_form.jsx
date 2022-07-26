@@ -87,7 +87,7 @@ class SignupForm extends React.Component {
                 className='form-input'
                 value={this.state.handle}
                 onChange={this.update('handle')}
-                placeholder="Handle"
+                placeholder="Name"
               />
             <br/>
               <input type="password"
