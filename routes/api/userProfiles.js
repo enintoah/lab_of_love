@@ -4,10 +4,11 @@ const UserProfile = require('./../../models/UserProfile')
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
-const validateUserProfile = require('../../validation/userProfile')
+const validateUserProfile = require('../../validation/userProfile');
+const User = require("../../models/User");
 
-router.get('/test', (req, res) => {
-  return res.json({msg: "hello"})
+router.get('/by_email', (req, res) => {
+  User.findOne
 })
 
 // for getting every persons date for the week. 
