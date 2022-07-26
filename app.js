@@ -23,8 +23,23 @@ app.use("/api/messages", messages)
 app.use(passport.initialize());
 require('./config/passport')(passport);
 const port = process.env.PORT || 5050;
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+const server = app.listen(port, () => console.log(`Server is running on port ${port}`));
 
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
+const io = require('socket.io')(server, {
+  pingTimeout: 60000,
+  cors: {
+    origin: "http://localhost:3000"
+  }
+})
+
+io.on("connection", (socket) => {
+  console.log('connected to socket.io');
+  
+  socket.on('setup', () => {
+    // socket.emit('connected')
+    console.log('setup worked')
+  })
+})
+
+
 

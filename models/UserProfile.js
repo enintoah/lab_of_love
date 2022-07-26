@@ -8,6 +8,10 @@ const UserProfileSchema = new Schema({
     type: String,
     required: true
   },
+  name: {
+    type: String,
+    required: true 
+  },
   interests: {
     type: [String],
     required: true
