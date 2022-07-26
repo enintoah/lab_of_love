@@ -23,6 +23,7 @@ return {
 case RECEIVE_USER_SIGN_IN:
 return {
  ...state,
+//  console.log()
  isSignedIn: true
 }
 default:
