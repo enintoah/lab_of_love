@@ -2,7 +2,7 @@ import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
-import MainPage from './main_page/main_page';
+import MainPageContainer from './main_page/main_page_container';
 import LoginForm from './session/login_form_container';
 import SignupForm from './session/signup_form_container';
 import NavContainer from './nav/nav_container';
@@ -18,7 +18,7 @@ const App = () => (
         <Route path='/welcome' component={Welcome}/>
         <AuthRoute path="/login" component={LoginForm}/>
         <AuthRoute path="/signup" component={SignupForm}/>
-        <Route exact path="/" component={MainPage} />
+        <Route exact path="/" component={MainPageContainer} />
         <Route exact path="/messaging" component={MessagingPage} />
     </Switch>
     </div>
