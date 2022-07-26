@@ -8,6 +8,8 @@ const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
+router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
+
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
   res.json({
     id: req.user.id,
@@ -23,7 +25,7 @@ router.post("/register", (req, res) => {
     return res.status(400).json(errors);
   }
 
-  User.findOne({ handle: req.body.handle }).then(user => {
+  User.findOne({ handle: req.body.handle }).then(user => { 
     if (user) {
       errors.handle = "User already exists";
       return res.status(400).json(errors);
