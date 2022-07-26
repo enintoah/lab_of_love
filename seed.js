@@ -48,7 +48,7 @@ mongoose
     
   ];
   const seedUserProfiles = [
-      { user_id: '62e02f09482177caeed9a73c',
+      { user_id: '62e037b54780df32d1a7991e',
         name:'Anthonie Lorsithong',
         description:"Life is Great, But Maybe It Can Be Better With You? ",
         interests:["ping pong","watch one piece","tennis","programming"],
@@ -62,7 +62,7 @@ mongoose
         commitmentLevel:100,
         pronouns:"he/him",
        },
-       { user_id: '62e02f09482177caeed9a73d',
+       { user_id: '62e037d34780df32d1a79921',
         name:'Alexandra Daddario',
         description:'American actress. She had her breakthrough portraying Annabeth Chase in the Percy Jackson film series (2010–2013). She has since starred as Paige in Hall Pass (2011), Heather Miller in Texas Chainsaw 3D (2013), Blake Gaines in San Andreas (2015), Summer Quinn in Baywatch (2017), and Alexis Butler in We Summon the Darkness (2019). She has also guest starred in television series such as White Collar, It is Always Sunny in Philadelphia, True Detective, New Girl, and American Horror Story: Hotel. In 2021, she starred in the first season of the HBO series The White Lotus, for which she received widespread critical acclaim and an Emmy nomination for Outstanding Supporting Actress in a Limited or Anthology Series or Movie in 2022.',
         interests:["cars","sushi","ice cream","dogs"],
@@ -77,7 +77,8 @@ mongoose
         pronouns:"she/her",
           
        },
-       { user_id: '62e02f09482177caeed9a73e',
+       { 
+        user_id: '62e037e94780df32d1a79924',
         name:'Zendaya Maree Stoermer Coleman',
         description:"I am out of your league ",
         interests:["acting","dancing","dating tom holland"],
@@ -91,7 +92,7 @@ mongoose
         commitmentLevel:85,
         pronouns:"she/her",
        },
-       { user_id: '62e02f09482177caeed9a73f',
+       { user_id: '62e037fd4780df32d1a79927',
         name:'Bella Poarch',
         description:"Want some cake?",
         interests:["filming tiktok","traveling","petting dog"],
@@ -105,7 +106,7 @@ mongoose
         commitmentLevel:50,
         pronouns:"she/her",
        },
-       { user_id: '62e02f09482177caeed9a740',
+       { user_id: '62e038894780df32d1a7992d',
         name:'"Emma" Jean Stone',
         description: "I do find that I'm drawn to people in my life, romantically or not, that have something to teach me.",
         interests: ["acting","wine tasting","swimming","supporting charities"],
@@ -119,7 +120,7 @@ mongoose
         commitmentLevel: 100,
         pronouns: "she/her",
        },
-       { user_id: '62e02f09482177caeed9a741',
+       { user_id: '62e038204780df32d1a7992a',
         name:'Doja Cat',
         description:"I know you ain't a drug but you get me so high",
         interests:["rapping","singing","listening to songs"],
@@ -138,11 +139,17 @@ mongoose
   ];
 
   const seedDB = async () => {
-    //   await User.deleteMany({});
-      await UserProfile.deleteMany({});
+    await User.findOneAndUpdate({email: "demo@gmail.com"}, {matches: [seedUserProfiles[1], seedUserProfiles[2], seedUserProfiles[3], seedUserProfiles[4], seedUserProfiles[5]]})
+    // await User.findOneAndUpdate({email: "addrio@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[2], seedUserProfiles[3], seedUserProfiles[4], seedUserProfiles[5]]})
+    // await User.findOneAndUpdate({email: "zendaya@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[1], seedUserProfiles[3], seedUserProfiles[4], seedUserProfiles[5]]})
+    // await User.findOneAndUpdate({email: "demo@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[1], seedUserProfiles[2], seedUserProfiles[4], seedUserProfiles[5]]})
+    // await User.findOneAndUpdate({email: "emma@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[1], seedUserProfiles[2], seedUserProfiles[3], seedUserProfiles[5]]})
+    // await User.findOneAndUpdate({email: "dojacat@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[1], seedUserProfiles[2], seedUserProfiles[3], seedUserProfiles[4]]})
+      // await UserProfile.deleteMany({});
+      // await User.findOneAndUpdate({email: "demo@gmail.com"}, {handle: "anthonie"})
     //   await User.insertMany(seedUsers);
 
-      await UserProfile.insertMany(seedUserProfiles);
+      // await UserProfile.insertMany(seedUserProfiles);
   }
 
   seedDB().then(()=>{

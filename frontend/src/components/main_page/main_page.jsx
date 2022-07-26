@@ -10,6 +10,7 @@ class MainPage extends React.Component{
 
   componentDidMount() {
     this.props.getCurrentUserProfile(this.props.currentUser.id)
+    this.props.getMatches(this.props.currentUser.id)
   }
 
     render() {

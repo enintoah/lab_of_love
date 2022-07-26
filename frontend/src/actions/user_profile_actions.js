@@ -1,4 +1,4 @@
-import { fetchUserProfile } from "../util/user_profile_util"
+import { fetchUserProfile, fetchMatches } from "../util/user_profile_util"
 
 export const RECEIVE_USER_PROFILES = "RECEIVE_USER_PROFILES"
 export const RECEIVE_USER_PROFILE = "RECEIVE_USER_PROFILE"
@@ -31,4 +31,8 @@ export const getUserProfile = (id) => dispatch => {
 
 export const getCurrentUserProfile = (id) => dispatch => {
   return fetchUserProfile(id).then((res) => dispatch(receiveCurrentUserProfile(res)));
+}
+
+export const getMatches = (id) => dispatch => {
+  return fetchMatches(id).then((res) => dispatch(receiveUserProfiles(res)))
 }
