@@ -7,6 +7,7 @@ import LoginForm from './session/login_form_container';
 import SignupForm from './session/signup_form_container';
 import NavContainer from './nav/nav_container';
 import Welcome from './welcome'
+import MessagingPage from './messaging_page/messaging_page';
 // import './css/ExaTwqqWQAM6s9m.jpeg'
 // import MainPage from './main/main_page';
 
@@ -18,7 +19,7 @@ const App = () => (
         <AuthRoute path="/login" component={LoginForm}/>
         <AuthRoute path="/signup" component={SignupForm}/>
         <Route exact path="/" component={MainPage} />
-       
+        <Route exact path="/messaging" component={MessagingPage} />
     </Switch>
     </div>
 );
