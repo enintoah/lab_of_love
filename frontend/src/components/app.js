@@ -1,11 +1,11 @@
 import React from 'react';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { AuthRoute } from '../util/route_util';
 import { Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
 import MainPageContainer from './main_page/main_page_container';
 import LoginForm from './session/login_form_container';
 import SignupForm from './session/signup_form_container';
-import NavContainer from './nav/nav_container';
+// import NavContainer from './nav/nav_container';
 import Welcome from './welcome'
 import MessagingPage from './messaging_page/messaging_page';
 import ShowPage from './show_page/show_page_container';
