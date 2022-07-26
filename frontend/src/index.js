@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import './app.scss'
 // We will create this component shortly
 import Root from './components/root';
 
