@@ -11,9 +11,12 @@ const userProfilesReducer = (state = {}, action) => {
     case RECEIVE_USER_PROFILE:
      
     case RECEIVE_USER_PROFILES:
-      return action.profiles.data
+      action.profiles.data.forEach(el => {
+        newState[el.user_id] = el
+      })
+      return newState
     case RECEIVE_USER_LOGOUT: 
-
+      return {}
     default:
       return state;
   }

@@ -20,7 +20,7 @@ const App = () => (
         <AuthRoute path="/login" component={LoginForm}/>
         <AuthRoute path="/signup" component={SignupForm}/>
         <Route exact path="/" component={MainPageContainer} />
-        <Route exact path="/messaging" component={MessagingPage} />
+        <Route exact path="/messaging/:match_id" component={MessagingPage} />
         <Route exact path="/users/:user_id" component={ShowPage} />
     </Switch>
     </div>

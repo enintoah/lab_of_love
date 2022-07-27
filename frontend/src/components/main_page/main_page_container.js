@@ -4,7 +4,8 @@ import { getCurrentUserProfile, getUserProfile, getMatches } from '../../actions
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    currentUser: state.session.user
+    currentUser: state.session.user,
+    matches: state.entities.userProfiles
   }
 };
 

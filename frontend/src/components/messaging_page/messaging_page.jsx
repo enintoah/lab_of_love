@@ -5,17 +5,37 @@ import { io } from "socket.io-client";
 const ENDPOINT = "http://localhost:5050";
 var socket, selectedChatCompare; 
 
-const MessagingPage = (props) =>  {
+// const MessagingPage = (props) =>  {
 
-  useEffect(() => {
+//   useEffect(() => {
+//     socket = io(ENDPOINT);
+//     socket.emit('setup')
+//     socket.on('connected', () => { console.log('true') })
+//   }, []);
+
+//   return (
+//     <h2>This is the messaging page!</h2>
+//   )
+// }
+
+class MessagingPage extends React.Component {
+  constructor(props) {
+    super(props)
+
+  }
+
+  componentDidMount() {
     socket = io(ENDPOINT);
     socket.emit('setup')
-    // socket.on('connected', () => { console.log('true') })
-  }, []);
+  }
 
-  return (
-    <h2>This is the messaging page!</h2>
-  )
+  render() {
+    return (
+      <div>
+        <h2>This is the messaging page!</h2>
+      </div>
+    )
+  }
 }
 
 export default MessagingPage
