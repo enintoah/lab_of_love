@@ -1,0 +1,49 @@
+.page-container{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(68, 123, 160);
+    border-radius: 15px;
+    width: 600px;
+    align-items: center;
+    box-shadow: 5px 5px 5px rgb(180, 180, 180);
+    margin: 10px;
+}
+
+.inner-page{
+    padding: 20px;
+}
+
+.top-of-show{
+    display: flex;
+    justify-content: space-between;
+}
+
+.show-page-info{
+    margin-top: 5px;
+}
+
+.show-page-contents{
+    display: flex;
+    justify-content: center;
+}
+
+.show-buttons{
+    display: flex;
+}
+
+.button-style{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin: 5px;
+    transition: background-color 1s;
+}
+
+.button-style:hover{
+    cursor: pointer;
+    background-color: rgb(175, 195, 228);
+}
+
+.delete-button{
+    color: red;
+}
