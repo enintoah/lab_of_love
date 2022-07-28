@@ -94,7 +94,7 @@ router.post("/login", (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  User.findOne({id: req.params.id }).then(user => {
+  User.findOne({_id: req.params.id }).then(user => {
       const matches = user.matches
       return res.json(matches)
     })
