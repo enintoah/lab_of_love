@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../nav/nav_container";
 import Card from "./card";
-
+import { Link } from "react-router-dom";
 
 class MainPage extends React.Component{
 
