@@ -9,6 +9,7 @@ import SignupForm from './session/signup_form_container';
 import Welcome from './welcome'
 import MessagingPage from './messaging_page/messaging_page';
 import ShowPage from './show_page/show_page_container';
+import EditPage from './show_page/edit_page_container';
 // import './css/ExaTwqqWQAM6s9m.jpeg'
 // import MainPage from './main/main_page';
 
@@ -21,6 +22,7 @@ const App = () => (
         <AuthRoute path="/signup" component={SignupForm}/>
         <Route exact path="/messaging/:match_id" component={MessagingPage} />
         <Route exact path="/users/:user_id" component={ShowPage} />
+        <Route exact path="/users/:user_id/edit" component={EditPage}/>
         <Route exact path="/" component={MainPageContainer} />
     </Switch>
     </div>

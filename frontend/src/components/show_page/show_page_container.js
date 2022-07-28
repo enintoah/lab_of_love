@@ -8,10 +8,6 @@ const mapStateToProps = (state) =>{
     }
 }
 
-const mapDispatchToProps = ()=>{
-    return{
 
-    }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Show)
+export default connect(mapStateToProps, null)(Show)
