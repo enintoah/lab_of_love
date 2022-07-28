@@ -11,6 +11,9 @@ const messagesReducer = (state = {}, action) => {
   const newState = Object.assign({}, state)
   switch(action.type) {
     case RECEIVE_MESSAGE:
+      newState[action.message._id] = action.message
+      newState[action.message._id].type = 'create'
+      return newState;
     case RECEIVE_MESSAGES:
       action.messages.data.forEach(el => {
         newState[el._id] = el
@@ -18,7 +21,8 @@ const messagesReducer = (state = {}, action) => {
       })
       return newState 
     case REMOVE_MESSAGE:
-
+      delete newState[action.id]
+      return newState 
     case CLEAR_MESSAGES:
       return {}
     case RECEIVE_USER_LOGOUT: 

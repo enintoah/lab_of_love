@@ -48,12 +48,17 @@ io.on("connection", (socket) => {
   socket.on('new message', (message) => {
     console.log(message.sender);
     console.log(message.message)
-    socket.to(message.sender).emit('hello', message)
+    socket.to(message.sender).emit('receive message', message)
   })
 
-  // socket.on("disconnect", () => {
-  //   console.log('socket disconnected')
-  // })
+  socket.on("disconnect", () => {
+    console.log('socket disconnected')
+  })
+
+  socket.on('delete message', (message) => {
+    console.log('DELETE MESSAGE')
+    socket.to(message.sender).emit('remove message', message._id)
+  })
 })
 
 
