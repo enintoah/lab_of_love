@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import Navbar from  '../nav/nav_container'
+// import Navbar from  '../nav/nav_container'
 import { Link } from 'react-router-dom';
 import img from "./Products-Icon@4x.png"
 class SignupForm extends React.Component {

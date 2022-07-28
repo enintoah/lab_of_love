@@ -19,9 +19,9 @@ const App = () => (
         <Route path='/welcome' component={Welcome}/>
         <AuthRoute path="/login" component={LoginForm}/>
         <AuthRoute path="/signup" component={SignupForm}/>
-        <Route exact path="/" component={MainPageContainer} />
-        <Route exact path="/messaging" component={MessagingPage} />
+        <Route exact path="/messaging/:match_id" component={MessagingPage} />
         <Route exact path="/users/:user_id" component={ShowPage} />
+        <Route exact path="/" component={MainPageContainer} />
     </Switch>
     </div>
 );
