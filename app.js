@@ -34,11 +34,26 @@ const io = require('socket.io')(server, {
 
 io.on("connection", (socket) => {
   console.log('connected to socket.io');
-  
-  socket.on('setup', () => {
-    // socket.emit('connected')
-    console.log('setup worked')
+
+  socket.on('setup', (userData) => {
+    socket.join(userData.id);
+    console.log('joined room: ' + userData.id)
   })
+
+  socket.on('join chat', (room) => {
+    socket.join(room);
+    console.log(room)
+  })
+
+  socket.on('new message', (message) => {
+    console.log(message.sender);
+    console.log(message.message)
+    socket.to(message.sender).emit('hello', message)
+  })
+
+  // socket.on("disconnect", () => {
+  //   console.log('socket disconnected')
+  // })
 })
 
 

@@ -4,7 +4,6 @@ import * as MessageUtil from './../../util/message_util'
 import Message from "./message";
 
 const ENDPOINT = "http://localhost:5050";
-var socket, selectedChatCompare; 
 
 
 class ChatBox extends React.Component {
@@ -16,22 +15,30 @@ class ChatBox extends React.Component {
     }
 
     this.socket = io(ENDPOINT)
+    this.socket.emit('setup', this.props.currentUser)
+    this.socket.emit('join chat', this.props.matchId)
+    this.socket.on('hello', (message) => {
+      console.log(message)
+    })
+
     this.sendMessage = this.sendMessage.bind(this)
     this.updateState = this.updateState.bind(this)
     this.matchName = this.props.userProfiles[this.props.matchId].name
   }
 
   componentDidMount() {
-    this.socket.emit('setup', this.props.currentUser)
-    this.socket.emit('join chat', this.props.matchId)
-    this.socket.on('receive message', (message) => {
-      console.log("WHERES IS THE LOVE")
-    })
+    // this.socket.emit('setup', this.props.currentUser)
+    // this.socket.emit('join chat', this.props.matchId)
+    // this.socket.on('hello', (message) => {
+    //   console.log(message)
+    // })
   }
+  
 
   componentWillUnmount() {
     this.props.clearMessages()
     // unjoin a socket room
+    // this.socket.emit('disconnect')
   }
 
   updateState(e) {
@@ -55,18 +62,22 @@ class ChatBox extends React.Component {
   }
 
   render() {
-    const messages = Object.values(this.props.messages)
-    return (
-      <div>
-        <h2>Hello world, im dad</h2>
-        {messages.map(el => {
-          return (<Message message={el} />)
-        })}
-
-        <textarea name="" id="" cols="30" rows="10" onChange={this.updateState} placeholder={`message ${this.matchName}`} value={this.state.body}></textarea>
-        <button onClick={this.sendMessage}>Send</button>
-      </div>
-    )
+    if (!this.props.messages) {
+      return null
+    } else {
+      const messages = Object.values(this.props.messages)
+      return (
+        <div>
+          <h2>Hello world, im dad</h2>
+          {messages.map(el => {
+            return (<Message message={el} />)
+          })}
+  
+          <textarea name="" id="" cols="30" rows="10" onChange={this.updateState} placeholder={`message ${this.matchName}`} value={this.state.body}></textarea>
+          <button onClick={this.sendMessage}>Send</button>
+        </div>
+      )
+    }
   }
 }
 

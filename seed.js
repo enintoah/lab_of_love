@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const User = require('./models/User');
 const UserProfile = require('./models/UserProfile');
+const Message = require('./models/Message')
 const db = require('./config/keys').mongoURI;
 
 mongoose
@@ -84,7 +85,7 @@ mongoose
         interests:["acting","dancing","dating tom holland"],
         age:25,
         gender:"female",
-        personality:["outgoing","intuitive","intuitive","determine"],
+        personality:["outgoing","intuitive","determine"],
         loveLanguage: "words of affirmation",
         imageUrl:'https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png',
         happinessLevel:80,
@@ -98,7 +99,7 @@ mongoose
         interests:["filming tiktok","traveling","petting dog"],
         age:25,
         gender:"female",
-        personality:["Introvert","Sensing","Feeling","Perceiving"],
+        personality:["Introvert","Sensing","Feeling",],
         loveLanguage:"touch",
         imageUrl:'https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png',
         happinessLevel:70,
@@ -134,22 +135,47 @@ mongoose
         commitmentLevel:30,
         pronouns:"she/her",
        }
-       
-       
   ];
 
-  const seedDB = async () => {
-    await User.findOneAndUpdate({email: "demo@gmail.com"}, {matches: [seedUserProfiles[1], seedUserProfiles[2], seedUserProfiles[3], seedUserProfiles[4], seedUserProfiles[5]]})
-    // await User.findOneAndUpdate({email: "addrio@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[2], seedUserProfiles[3], seedUserProfiles[4], seedUserProfiles[5]]})
-    // await User.findOneAndUpdate({email: "zendaya@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[1], seedUserProfiles[3], seedUserProfiles[4], seedUserProfiles[5]]})
-    // await User.findOneAndUpdate({email: "demo@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[1], seedUserProfiles[2], seedUserProfiles[4], seedUserProfiles[5]]})
-    // await User.findOneAndUpdate({email: "emma@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[1], seedUserProfiles[2], seedUserProfiles[3], seedUserProfiles[5]]})
-    // await User.findOneAndUpdate({email: "dojacat@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[1], seedUserProfiles[2], seedUserProfiles[3], seedUserProfiles[4]]})
-      // await UserProfile.deleteMany({});
-      // await User.findOneAndUpdate({email: "demo@gmail.com"}, {handle: "anthonie"})
-    //   await User.insertMany(seedUsers);
+  const seedMessages = [
+    {
+      message: "How you doing?",
+      sender: "62e037b54780df32d1a7991e",
+      recipient: "62e037d34780df32d1a79921"
+    },
+    {
+      message: "You know how there's an I in Beautiful? So why aren't I in you, Beautiful?",
+      sender: "62e037b54780df32d1a7991e",
+      recipient: "62e037e94780df32d1a79924"
+    },
+    {
+      message: "So uhhh... You look good in your picture",
+      sender: "62e037fd4780df32d1a79927",
+      recipient: "62e037b54780df32d1a7991e"
+    },
+    {
+      message: "I am not interested. Sorry.",
+      sender: "62e038894780df32d1a7992d",
+      recipient: "62e037b54780df32d1a7991e"
+    },
+    {
+      message: "Know any good restuarants around here?",
+      sender: "62e037b54780df32d1a7991e",
+      recipient: "62e038204780df32d1a7992a"
+    }
+  ]
 
-      // await UserProfile.insertMany(seedUserProfiles);
+  const seedDB = async () => {
+    // await Message.deleteMany({});
+    // await Message.insertMany(seedMessages)
+    await User.findOneAndUpdate({email: "addrio@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[2], seedUserProfiles[3], seedUserProfiles[4], seedUserProfiles[5]]})
+    await User.findOneAndUpdate({email: "zendaya@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[1], seedUserProfiles[3], seedUserProfiles[4], seedUserProfiles[5]]})
+    await User.findOneAndUpdate({email: "demo@gmail.com"}, {matches: [seedUserProfiles[1], seedUserProfiles[2], seedUserProfiles[3], seedUserProfiles[4], seedUserProfiles[5]]})
+    await User.findOneAndUpdate({email: "emma@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[1], seedUserProfiles[2], seedUserProfiles[3], seedUserProfiles[5]]})
+    await User.findOneAndUpdate({email: "dojacat@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[1], seedUserProfiles[2], seedUserProfiles[3], seedUserProfiles[4]]})
+    await User.findOneAndUpdate({email: "bellaP@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[1], seedUserProfiles[2], seedUserProfiles[4], seedUserProfiles[5]]})
+    // await UserProfile.deleteMany({});
+    // await UserProfile.insertMany(seedUserProfiles);
   }
 
   seedDB().then(()=>{

@@ -92,7 +92,7 @@ router.post('/', (req, res) => {
 })
 
 router.delete('/:user_id', (req, res) => {
-  UserProfile.deleteOne({ user_id: req.params.user_id }).then(result => {
+  UserProfile.findOneAndDelete({ user_id: req.params.user_id }).then(result => {
     const success = {msg: "successfully deleted"};
     return res.json(success);
   })
