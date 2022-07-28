@@ -36,9 +36,8 @@ router.post('/create', (req, res) => {
 })
 
 router.delete('/:message_id', (req, res) => {
-  Message.findOneAndDelete({ _id: req.params.message_id }).then(() => {
-    const success = { msg: "successfully deleted "};
-    return res.json(success);
+  Message.findOneAndDelete({ _id: req.params.message_id }).then(message => {
+    return res.json(message);
   })
   .catch(err => {
     return res.status(400).json(err)

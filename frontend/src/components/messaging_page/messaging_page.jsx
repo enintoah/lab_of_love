@@ -1,9 +1,6 @@
 import React from "react"
 import ChatBoxContainer from "./chat_box_container";
-
-const ENDPOINT = "http://localhost:5050";
-var socket, selectedChatCompare; 
-
+import MatchShowPage from './match_show_page'
 
 class MessagingPage extends React.Component {
   constructor(props) {
@@ -14,9 +11,8 @@ class MessagingPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>HELLO WORLD</h1>
         <div>
-
+          <MatchShowPage matchProfile={this.props.userProfiles[this.props.match.params.match_id]} /> 
         </div>
         <div>
           <ChatBoxContainer matchId={this.props.match.params.match_id}/>

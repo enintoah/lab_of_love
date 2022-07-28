@@ -2,6 +2,7 @@ import { getMessages } from "../util/message_util"
 
 export const RECEIVE_MESSAGES = "RECEIVE_MESSAGES"
 export const RECEIVE_MESSAGE = "RECEIVE_MESSAGE"
+export const RECEIVE_SOCKET_MESSAGE = "RECEIVE_SOCKET_MESSAGE"
 export const REMOVE_MESSAGE = "REMOVE_MESSAGE"
 export const CLEAR_MESSAGES = "CLEAR_MESSAGES"
 
