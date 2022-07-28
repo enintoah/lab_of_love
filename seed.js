@@ -52,7 +52,7 @@ mongoose
       { user_id: '62e037b54780df32d1a7991e',
         name:'Anthonie Lorsithong',
         description:"Life is Great, But Maybe It Can Be Better With You? ",
-        interests:["ping pong","watch one piece","tennis","programming"],
+        interests:["ping pong","watch one piece","tennis"],
         age:21,
         gender:"male",
         personality:["thinker","playboy","deez-nuts"],
@@ -66,7 +66,7 @@ mongoose
        { user_id: '62e037d34780df32d1a79921',
         name:'Alexandra Daddario',
         description:'American actress. She had her breakthrough portraying Annabeth Chase in the Percy Jackson film series (2010–2013). She has since starred as Paige in Hall Pass (2011), Heather Miller in Texas Chainsaw 3D (2013), Blake Gaines in San Andreas (2015), Summer Quinn in Baywatch (2017), and Alexis Butler in We Summon the Darkness (2019). She has also guest starred in television series such as White Collar, It is Always Sunny in Philadelphia, True Detective, New Girl, and American Horror Story: Hotel. In 2021, she starred in the first season of the HBO series The White Lotus, for which she received widespread critical acclaim and an Emmy nomination for Outstanding Supporting Actress in a Limited or Anthology Series or Movie in 2022.',
-        interests:["cars","sushi","ice cream","dogs"],
+        interests:["cars","ice cream","dogs"],
         age:36,
         gender:"female",
         personality:["thinker","dogs","music"],
@@ -110,7 +110,7 @@ mongoose
        { user_id: '62e038894780df32d1a7992d',
         name:'"Emma" Jean Stone',
         description: "I do find that I'm drawn to people in my life, romantically or not, that have something to teach me.",
-        interests: ["acting","wine tasting","swimming","supporting charities"],
+        interests: ["acting","wine tasting","swimming"],
         age: 33,
         gender: "female",
         personality: ["fun","active","sensitive"],
@@ -174,8 +174,8 @@ mongoose
     await User.findOneAndUpdate({email: "emma@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[1], seedUserProfiles[2], seedUserProfiles[3], seedUserProfiles[5]]})
     await User.findOneAndUpdate({email: "dojacat@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[1], seedUserProfiles[2], seedUserProfiles[3], seedUserProfiles[4]]})
     await User.findOneAndUpdate({email: "bellaP@gmail.com"}, {matches: [seedUserProfiles[0], seedUserProfiles[1], seedUserProfiles[2], seedUserProfiles[4], seedUserProfiles[5]]})
-    // await UserProfile.deleteMany({});
-    // await UserProfile.insertMany(seedUserProfiles);
+    await UserProfile.deleteMany({});
+    await UserProfile.insertMany(seedUserProfiles);
   }
 
   seedDB().then(()=>{
