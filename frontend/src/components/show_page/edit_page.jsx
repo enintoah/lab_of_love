@@ -1,6 +1,6 @@
 import React from "react";
-import { updateUserProfile } from "../../util/user_profile_util";
 import { withRouter } from 'react-router-dom'
+import NavBar from '../nav/nav_container.js'
 
 
 class Edit extends React.Component{
@@ -48,141 +48,104 @@ class Edit extends React.Component{
     render(){
         return(
             <div>
-              <h1>Edit Page</h1>
-              <br />
-              <form onSubmit={this.handleSubmit}>
-                
-                     {/* <label>Name</label>
-                    
-                       <br />
-                       <input 
-                        type="text" 
-                        value={this.state.name}
-                        onChange={this.update("name")}/> */}
-                       <br />
-                       <br />
-                       <label>Description:
-                        <br />
-                        <textarea cols="30"
-                            rows="10"
-                            value={this.state.description}
-                            onChange={this.update("description")}
-                            />
-                        </label>
-                         <br />
-                         <br />
-                         <label>Passions:
-                            <input 
-                            type="text"
-                            value={this.state.interests1}
-                            onChange={this.update("interests1")}/>
-
-                            <input 
-                            type="text"
-                            value={this.state.interests2}
-                            onChange={this.update("interests2")}/>
-
-                            <input 
-                            type="text"
-                            value={this.state.interests3}
-                            onChange={this.update("interests3")}/>
-                        </label> 
-                         <br />
-                        <br />
-                        {/* <div className="radio"> */}
-                        {/* <p>Gender:</p>
-                            <label>
-                                <input
-                                type="radio"
-                                value="Male"
-                                checked={this.state.gender === "male"}
-                                onChange={this.update("gender")}
+                <div className="edit-navbar">
+                    <NavBar/>
+                </div>
+                <div className="edit-page">
+                    <div className="editp-name">
+                        <h1>{this.props.currentUserProfile.name}</h1>
+                    </div>
+                    <br />
+                    <div className="edit-form">
+                        <form onSubmit={this.handleSubmit}>
+                        <br /><br />
+                            <label className="description">Description: <br /><br />
+                                <textarea cols="30"
+                                rows="10"
+                                value={this.state.description}
+                                onChange={this.update("description")}
                                 />
-                                Male
+                            </label><br /><br />
+
+                            <label className="passions">Passions:<br /><br />
+                                <div className="passion-inputs">
+                                    <input 
+                                    type="text"
+                                    value={this.state.interests1}
+                                    onChange={this.update("interests1")}/>
+
+                                    <input 
+                                    type="text"
+                                    value={this.state.interests2}
+                                    onChange={this.update("interests2")}/>
+
+                                    <input 
+                                    type="text"
+                                    value={this.state.interests3}
+                                    onChange={this.update("interests3")}/>
+                                </div>
+                            </label><br /><br />
+
+                            <label className="age">Age:<br /><br />
+                                    <input type="text" 
+                                    value={this.state.age}
+                                        onChange={this.update("age")} />
                             </label>
-                            </div> */}
-
-{/* 
-                            <div className="radio">
-                                <label>
-                                    <input
-                                    type="radio"
-                                    value="Female"
-                                    checked={this.state.gender === "female"}
-                                    onChange={this.update("gender")}
-                                    />
-                                    Female
-                                </label>
-                            </div> */}
                             <br />
-                            
-                            <label>age
-                            <input type="text" 
-                               value={this.state.age}
-                                onChange={this.update("age")} />
-                            </label>
-                             <br />
-                            <label>personalities
-                            <br />
-                            <input 
-                              type="text"
-                              value={this.state.personality1}
-                              onChange={this.update("personality1")}/>
+                            <label className="personality">Personality:<br /><br />
+                                <div className="personality-inputs">
+                                    <input 
+                                    type="text"
+                                    value={this.state.personality1}
+                                    onChange={this.update("personality1")}/>
 
-                            <input 
-                              type="text"
-                              value={this.state.personality2}
-                              onChange={this.update("personality2")}/>
+                                    <input 
+                                    type="text"
+                                    value={this.state.personality2}
+                                    onChange={this.update("personality2")}/>
 
-                            <input 
-                              type="text"
-                              value={this.state.personality3}
-                              onChange={this.update("personality3")}/>
+                                    <input 
+                                    type="text"
+                                    value={this.state.personality3}
+                                    onChange={this.update("personality3")}/>
+                                </div>    
                             </label> 
-                           <br />
-                           <br />
-
-                          <label htmlFor="lang">loveLanguage</label>
-                           <br />
-                           <select onChange={this.update('loveLanguage')} name="languages" value={this.state.loveLanguage}>
-                               <option value="words of affirmation">words of affirmation</option>
-                               <option value="quality time">quality time</option>
-                               <option value="receiving gifts">receiving gifts</option>
-                               <option value="acts of service">acts of service</option>
-                               <option value="physical touch">physical touch</option>
-                           </select>
-                           <br />
-                           <br />
-                           <label>Living In</label> 
                             <br />
-                            <input 
-                              type="text"
-                              value={this.state.location}
-                              onChange={this.update("location")}/>
-                           <br />
-                           <br />
-                            
-                           <div className="happiness-slider">
-                           <label htmlFor="happiness" id="happiness-label">happinessLevel</label>
-                           <br />
-                             <input type="range" min={1} max={100} value={parseInt(this.state.happinessLevel)}
-                                className="slider" id="happiness-label" 
-                                onChange={this.update("happinessLevel")}/>
-                          </div>
-
-                          <div className="commitment-slider">
-                          <label htmlFor="commitment" id="commitment-label">commitmentLevel</label>
-                          <br />
-                             <input type="range" min={1} max={100} value={parseInt(this.state.commitmentLevel)} 
-                                className="slider" id="commitment-label"
-                                onChange={this.update("commitmentLevel")} />
-                          </div>
-
-                      <input type="submit" />
-
-
-                    
-              </form>
+                            <br />
+                            <label className="love-language">Love Language:<br /><br />
+                                <select onChange={this.update('loveLanguage')} name="languages" value={this.state.loveLanguage}>
+                                    <option value="words of affirmation">words of affirmation</option>
+                                    <option value="quality time">quality time</option>
+                                    <option value="receiving gifts">receiving gifts</option>
+                                    <option value="acts of service">acts of service</option>
+                                    <option value="physical touch">physical touch</option>
+                                </select>
+                            </label><br /><br />
+                            <label className="location">Living In: <br />
+                                <br />
+                                <input 
+                                type="text"
+                                value={this.state.location}
+                                onChange={this.update("location")}/>
+                            </label><br /><br />
+                            <div className="happiness">
+                                <label>Happiness Level:
+                                    <input type="range" min={1} max={100} value={parseInt(this.state.happinessLevel)}
+                                    className="slider"  
+                                    onChange={this.update("happinessLevel")}/>
+                                </label>
+                            </div><br />
+                            <div className="commitment">
+                                <label>Commitment Level:
+                                    <input type="range" min={1} max={100} value={parseInt(this.state.commitmentLevel)} 
+                                    className="slider" 
+                                    onChange={this.update("commitmentLevel")} />
+                                </label>
+                            </div><br /><br />
+                            <input type="submit" /><br /><br />
+                        </form>
+                    </div>
+                </div>
             </div>
         )
     }

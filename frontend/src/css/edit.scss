@@ -1,0 +1,190 @@
+.mph1{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.edit-navbar{
+  border-bottom: 1px solid lightgray ;
+}
+
+.editp-name{
+  font-weight: bold;
+  font-size: large;
+}
+
+.edit-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-form{
+  box-shadow: inset 4px 4px 4px 4px rgba(0,0,0,0.2) ;
+  width: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.edit-form form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-navbar{
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.edit-navbar > div{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+
+.description{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 1000px;
+
+}
+
+.passions{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 1000px;
+
+}
+
+// .passions input{
+//   display: flex;
+//   text-align: center;
+//   width: 800px;
+//   margin: 5px;
+// }
+
+.age{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 1000px;
+
+}
+
+.age input{
+  display: flex;
+  text-align: center;
+  width: 800px;
+  margin: 5px;
+}
+
+.personality{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 1000px;
+
+}
+
+// .personality input{
+//   display: flex;
+//   text-align: center;
+//   width: 800px;
+//   margin: 5px;
+// }
+
+.love-language{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 1000px;
+
+}
+
+.location{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 1000px;
+
+}
+
+.location input{
+  display: flex;
+  text-align: center;
+  width: 800px;
+  margin: 5px;
+}
+
+.commitment{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 1000px;
+
+}
+
+.commitment input{
+  display: flex;
+  text-align: center;
+  width: 800px;
+  margin: 5px;
+}
+
+.happiness{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 1000px;
+
+}
+
+.happiness input{
+  display: flex;
+  text-align: center;
+  width: 800px;
+  margin: 5px;
+}
+
+.description textarea{
+  display: flex;
+  text-align: center;
+  width: 800px;
+  margin: 5px;
+}
+
+.passion-inputs{
+  display: flex;
+}
+
+.passion-inputs input{
+  margin: 50px;
+}
+
+.personality-inputs{
+  display: flex;
+}
+
+.personality-inputs input{
+  margin: 50px;
+}
