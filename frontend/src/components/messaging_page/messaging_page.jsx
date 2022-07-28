@@ -1,22 +1,9 @@
-import React from "react";
-import { useEffect } from "react";
-import { io } from "socket.io-client";
+import React from "react"
+import ChatBoxContainer from "./chat_box_container";
 
 const ENDPOINT = "http://localhost:5050";
 var socket, selectedChatCompare; 
 
-// const MessagingPage = (props) =>  {
-
-//   useEffect(() => {
-//     socket = io(ENDPOINT);
-//     socket.emit('setup')
-//     socket.on('connected', () => { console.log('true') })
-//   }, []);
-
-//   return (
-//     <h2>This is the messaging page!</h2>
-//   )
-// }
 
 class MessagingPage extends React.Component {
   constructor(props) {
@@ -24,15 +11,16 @@ class MessagingPage extends React.Component {
 
   }
 
-  componentDidMount() {
-    socket = io(ENDPOINT);
-    socket.emit('setup')
-  }
-
   render() {
     return (
       <div>
-        <h2>This is the messaging page!</h2>
+        <h1>HELLO WORLD</h1>
+        <div>
+
+        </div>
+        <div>
+          <ChatBoxContainer matchId={this.props.match.params.match_id}/>
+        </div>
       </div>
     )
   }

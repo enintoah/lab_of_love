@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link, Redirect} from 'react-router-dom'
+import {Link, Redirect, withRouter} from 'react-router-dom'
+
 
 
 class NavBar extends React.Component{
@@ -19,13 +20,17 @@ class NavBar extends React.Component{
    
 
     getLinks(){
+      const userId = this.props.currentUser.user_id;
       if(this.props.loggedIn){
          return(
-             <div>
-                <Link to={'/'}>All Tweets</Link>
-                <Link to={'/profile'}>Profile</Link>
-                <Link to={'/chat'}>chat</Link>
-                <button onClick={this.logoutUser}>Logout</button>
+             <div className='nav'>
+                <div className='lol'>
+                  <a href="/">Lab of Love</a>
+                </div>
+                <div className='links'>
+                  <img className='navbar-img' onClick={()=> (this.props.history.push(`/users/${userId}`))} src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png" />
+                  <button onClick={this.logoutUser}>Logout</button>
+                </div>
              </div>
          );
       }else{
@@ -36,9 +41,9 @@ class NavBar extends React.Component{
 
     }
     render() {
+      console.log('currentUser',this.props.currentUser)
         return (
           <div>
-              <h1>lab of love</h1>
               { this.getLinks() }
           </div>
         );
@@ -46,4 +51,4 @@ class NavBar extends React.Component{
 
 }
 
-export default NavBar;
+export default withRouter(NavBar);

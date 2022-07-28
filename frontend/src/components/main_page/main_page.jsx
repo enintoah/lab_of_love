@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import NavBar from "../nav/nav_container";
 import Card from "./card";
+
 
 class MainPage extends React.Component{
 
@@ -16,10 +16,11 @@ class MainPage extends React.Component{
     this.props.getMatches(this.props.currentUser.id)
   }
 
-  redirectToMessaging(e) {
+  async redirectToMessaging(e) {
     e.preventDefault()
-    // this.props.history.push(`/messaging/${e.currentTarget.value}`)
     const id = e.target.getAttribute('value')
+    const users = { user1: this.props.currentUser.id, user2: id};
+    await this.props.fetchMessages(users);
     this.props.history.push(`/messaging/${id}`)
   }
 
@@ -30,8 +31,7 @@ class MainPage extends React.Component{
         const matches = Object.values(this.props.matches)
         return (
           <div>
-            <h1>Love of Lab</h1>
-                  <div>
+                <div className="nav-bar">
                      <NavBar/>
                  </div>
                  <div className="cards-container">

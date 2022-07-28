@@ -5,7 +5,7 @@ import { Switch } from 'react-router-dom';
 import MainPageContainer from './main_page/main_page_container';
 import LoginForm from './session/login_form_container';
 import SignupForm from './session/signup_form_container';
-import NavContainer from './nav/nav_container';
+// import NavContainer from './nav/nav_container';
 import Welcome from './welcome'
 import MessagingPage from './messaging_page/messaging_page';
 import ShowPage from './show_page/show_page_container';
@@ -19,9 +19,9 @@ const App = () => (
         <Route path='/welcome' component={Welcome}/>
         <AuthRoute path="/login" component={LoginForm}/>
         <AuthRoute path="/signup" component={SignupForm}/>
-        <Route exact path="/" component={MainPageContainer} />
         <Route exact path="/messaging/:match_id" component={MessagingPage} />
         <Route exact path="/users/:user_id" component={ShowPage} />
+        <Route exact path="/" component={MainPageContainer} />
     </Switch>
     </div>
 );
