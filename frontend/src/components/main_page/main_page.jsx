@@ -41,6 +41,14 @@ class MainPage extends React.Component{
                     })
                   }
                  </div>
+                <div>
+               
+                    <div>
+                      <Link to={`/users/${this.props.currentUser.id}`}><button>
+                      User Profile</button></Link>
+                    </div>
+                </div>
+
             <footer>
               Copyright &copy; 2022 Lab
             </footer>
