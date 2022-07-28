@@ -1,12 +1,11 @@
 import React from "react";
 import NavCont from "../nav/nav_container"
+import { Link } from "react-router-dom";
+
 class Show extends React.Component{
-    constructor(props){
-        super(props)
-        console.log(props)
-    }
+  
     render(){
-    
+        const currentUser = this.props.currentUser
         return(
             <div className="show-page-contents">
                 <NavCont />
@@ -48,6 +47,11 @@ class Show extends React.Component{
                         {/* Will link to edit and delete functions */}
                         <button className="button-style delete-button" onClick={() => alert("You cannot delete the demo user profile.")}>Delete</button>
                     </div>
+            <div>
+             <button><Link to={`/users/${currentUser.id}/edit`}>Edit</Link></button>
+                <h1>User show page</h1>
+                <div>
+                    
                 </div>
             </div>
         )
