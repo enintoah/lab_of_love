@@ -7,21 +7,26 @@ class Welcome extends React.Component{
      render(){
         return(
             <div>
-               <div className='title'>
-                   <h1>Welcome to Lab of Love</h1> 
-               </div>
-               <div className='login-signup-welcomepage' >
-                    <Link to="/signup">
-                    <button className='signup'>
-                        Sign Up
-                    </button>
-                    </Link>
-            
-                    <Link to="/login">
-                    <button className='login'>
-                        Log In
-                    </button> 
-                    </Link>
+                <div className='upper-page'>
+                    <div className='title'>
+                        <h1 className='welcome-title'>Welcome to Lab of Love</h1> 
+                    </div>
+                    <div className='login-signup-welcomepage' >
+                            <Link to="/signup">
+                            <button className='get-started'>
+                                Get started
+                            </button>
+                            </Link>
+                    
+                            {/* <Link to="/login">
+                            <button className='login'>
+                                Log In
+                            </button> 
+                            </Link> */}
+                    </div>
+                </div>
+                <div className='meet-the-devs'>
+                    
                 </div>
            </div>
         )

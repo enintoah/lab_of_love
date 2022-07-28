@@ -1,49 +1,181 @@
 .page-container{
+    overflow: hidden;
     display: flex;
+    // flex-flow: column wrap;
+    height: fit-content;
+    position: absolute;
     flex-direction: column;
     background-color: rgb(68, 123, 160);
+    border: solid black 2px;
     border-radius: 15px;
-    width: 600px;
+    width: 100%;
     align-items: center;
-    box-shadow: 5px 5px 5px rgb(180, 180, 180);
-    margin: 10px;
+    box-shadow: 6px 6px 6px rgb(139, 139, 139);
+    margin: 50px;
 }
 
 .inner-page{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    // justify-content: center;
     padding: 20px;
+    z-index: 999;
 }
 
 .top-of-show{
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    border-bottom: solid rgb(0, 0, 0) 1px;
+    background-color: rgb(45, 102, 141);
+    z-index: 0;
 }
 
 .show-page-info{
+    display: flex;
+    // align-items: center;
+    padding: 15px;
+    border-bottom: solid black 1px;
+    // margin-left: 10px;
+    // margin-right: 10px;
+    // margin-top: 10px;
+    font-weight: bold;
+}
+
+.inner-h2{
+    margin-left: 5px;
+    // font-size: large;
+    font-weight: normal;
+}
+
+.listing-show{
+    margin-left: 20px;
     margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .show-page-contents{
     display: flex;
     justify-content: center;
+    // justify-content: space-between;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    height: 100vh;
+    // align-items: center;
+    // width: 100%;
+    z-index: 999;
 }
 
 .show-buttons{
     display: flex;
+    justify-content: center;
+    z-index: 999;
+    width: 100%;
+    border-top: solid rgb(0, 0, 0) 1px;
+    background-color: rgb(45, 102, 141);
 }
 
 .button-style{
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     margin: 5px;
+    color: white;
+    background-color: rgb(0, 53, 186);
     transition: background-color 1s;
 }
 
 .button-style:hover{
     cursor: pointer;
-    background-color: rgb(175, 195, 228);
+    background-color: rgb(75, 127, 209);
 }
 
 .delete-button{
-    color: red;
+    color: rgb(255, 255, 255);
+    background-color: rgb(189, 0, 0);
+    transition: background-color 1s;
+}
+
+.delete-button:hover{
+    background-color: rgb(177, 97, 97);
+}
+
+.show-page-image{
+    box-shadow: 2px 2px 2px rgb(0, 0, 0);
+    width: 590px;
+    height: 590px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    border: solid rgb(0, 0, 0) 1px;
+    object-fit: cover;
+    z-index: 999;
+}
+
+.page-info-under-image{
+    background-color: rgb(129, 157, 176);
+    // margin-top: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    width: 400px;
+    height: 590px;
+    overflow: scroll;
+    border: solid rgb(0, 0, 0) 1px;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0);
+    z-index: 999;
+}
+
+.color-behind{
+    width: 2000px;
+    height: 100px;
+    margin-left: 870px;
+    margin-top: -50;
+    background-color: #46A8B8;
+    transform: rotate(45deg);
+    position: absolute;
+    z-index: 0;
+}
+
+.color-behind2{
+    width: 2000px;
+    height: 100px;
+    margin-top: 800px;
+    margin-right: 500px;
+    background-color: #46A8B8;
+    transform: rotate(45deg);
+    position: absolute;
+    z-index: 0;
+}
+
+.top-show-page-info{
+    display: flex;
+    align-items: center;
+    font-size: large;
+    color: rgb(255, 255, 255);
+    margin: 40px;
+    font-weight: bold;
+}
+
+.show-page-title{
+    border-bottom: solid black 1px;
+    // background-color: rgb(28, 62, 84);
+    background-color: rgb(16, 59, 86);
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+    padding: 20px;
+}
+
+.upper-page{
+    height: 100vh;
+    background-color: black;
+}
+
+.meet-the-devs{
+    height: 100vh;
+    background-color: cornflowerblue;
 }

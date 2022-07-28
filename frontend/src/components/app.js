@@ -22,6 +22,7 @@ const App = () => (
         <Route exact path="/" component={MainPageContainer} />
         <Route exact path="/messaging" component={MessagingPage} />
         <Route exact path="/users/:user_id" component={ShowPage} />
+        {/* Redirect */}
     </Switch>
     </div>
 );
