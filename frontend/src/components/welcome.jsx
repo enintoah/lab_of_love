@@ -10,9 +10,9 @@ class Welcome extends React.Component{
                 <div className='welcome-nav-bar'>
                     <div className='left-side-nav'>
                         <img className="top-logo" src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/logo+(3).png"/>
-                        <h1 className='names-nav'>Anthonie, </h1>
-                        <h1 className='names-nav'>Brian, </h1>
-                        <h1 className='names-nav'>Ignacio, </h1>
+                        <h1 className='names-nav'>Anthonie </h1>
+                        <h1 className='names-nav'>Brian </h1>
+                        <h1 className='names-nav'>Ignacio </h1>
                         <h1 className='names-nav'>Jacob</h1>
                     </div>
                     <div>
