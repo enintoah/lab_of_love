@@ -49,7 +49,7 @@ class NavBar extends React.Component{
                                <h3>{name}</h3>
                             </div>    
                      
-                        
+                  
                            <div className='menu'>
                                   <div className='menu-dropdown'>
                                       <button onClick={this.logoutUser}>Logout</button>
