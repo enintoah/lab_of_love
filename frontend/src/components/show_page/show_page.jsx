@@ -44,6 +44,7 @@ class Show extends React.Component{
                             </div>
                         </div>
                         <div className="show-buttons">
+                            <Link to={`/users/${this.props.currentUser.id}/edit`}>
                             <Link to={`/users/${currentUser.user_id}/edit`}>
                                 <button className="button-style">Edit</button>
                             </Link>
