@@ -17,33 +17,37 @@ class ChatBox extends React.Component {
     this.socket = io(ENDPOINT)
     this.socket.emit('setup', this.props.currentUser)
     this.socket.emit('join chat', this.props.matchId)
-    this.socket.on('hello', (message) => {
-      console.log(message)
+    this.socket.on('receive message', (message) => {
+      this.props.receiveMessage(message);
+    })
+    this.socket.on('remove message', (id) => {
+      this.props.destroyMessage(id)
     })
 
+    this.removeMessage = this.removeMessage.bind(this)
     this.sendMessage = this.sendMessage.bind(this)
     this.updateState = this.updateState.bind(this)
     this.matchName = this.props.userProfiles[this.props.matchId].name
   }
 
-  componentDidMount() {
-    // this.socket.emit('setup', this.props.currentUser)
-    // this.socket.emit('join chat', this.props.matchId)
-    // this.socket.on('hello', (message) => {
-    //   console.log(message)
-    // })
-  }
-  
-
   componentWillUnmount() {
     this.props.clearMessages()
-    // unjoin a socket room
-    // this.socket.emit('disconnect')
+    this.socket.emit('disconnect')
   }
 
   updateState(e) {
     e.preventDefault()
     this.setState({body: e.target.value})
+  }
+
+  removeMessage(id) {
+    MessageUtil.deleteMessage(id)
+      .then(res => {
+        console.log(res.data._id)
+        console.log(this.props)
+        this.props.destroyMessage(res.data._id);
+        this.socket.emit('delete message', res.data);
+      })
   }
 
   sendMessage(e) {
@@ -54,7 +58,10 @@ class ChatBox extends React.Component {
       recipient: this.props.matchId
     }
     MessageUtil.createMessage(message)
-      .then(res => {this.socket.emit('new message', res.data)})
+      .then(res => {
+        this.socket.emit('new message', res.data);
+        this.props.receiveMessage(res.data);
+      })
       .catch(err => console.log(err))
     
 
@@ -70,7 +77,7 @@ class ChatBox extends React.Component {
         <div>
           <h2>Hello world, im dad</h2>
           {messages.map(el => {
-            return (<Message message={el} />)
+            return (<Message removeMessage={this.removeMessage} message={el} currentUser={this.props.currentUser} />)
           })}
   
           <textarea name="" id="" cols="30" rows="10" onChange={this.updateState} placeholder={`message ${this.matchName}`} value={this.state.body}></textarea>

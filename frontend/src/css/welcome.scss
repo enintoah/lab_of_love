@@ -3,20 +3,136 @@
     font-weight: bolder;
     border-radius: 20px;
     border: none;
-    margin-top: 20px;
-    margin-left: 50px;
+    // margin-top: 70px;
+    margin-left: 100px;
     // background: linear-gradient() ;
-    background: linear-gradient(#6f00ff, #07a2a0);
+    background: linear-gradient(rgb(46, 9, 126), #7597da);
     color: white;
     padding: 20px;
 }
 
+.get-devs{
+    font-size: x-large;
+    font-weight: bolder;
+    border-radius: 20px;
+    border: none;
+    // margin-top: 70px;
+    margin-left: 20px;
+    // background: linear-gradient() ;
+    background: linear-gradient(#000000, #960000);
+    color: white;
+    padding: 20px;
+}
+
+.get-started:hover{
+    cursor: pointer;
+}
+
+.welcome-nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    border-bottom: solid black 2px;
+}
+
+.login-signup-welcomepage{
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.top-logo{
+    width: 200px;
+}
+
+.upper-page{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+}
+
+.meet-the-devs{
+    height: 100vh;
+    display: flex;
+    background-color: cornflowerblue;
+}
+
+.dev-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30vw;
+    height: 50vw;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 3px black;
+}
+
 .welcome-title{
-    font-size: 80px;
+    font-size: 90px;
+    font-weight: bolder;
     // margin-left: 50px;
     font-family: 'Lato', sans-serif;
-    padding: 50px;
-    padding-top: 100px;
+    padding-left: 100px;
+    // margin-bottom: 100px;
+    text-shadow: 0px 4px rgb(156, 156, 156);
+    // padding-top: 100px;
     // margin-top: 10px;
-    color: deepskyblue;
+    color: rgb(46, 9, 126);
 }
+
+.dev-name{
+    margin-top: 20px;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}
+
+.left-side-nav{
+    margin-left: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.welcome-image{
+    // margin-bottom: 100px;
+    z-index: 999999;
+    width: 500px;
+    margin-right: 70px;
+    margin-bottom: 250px;
+    // margin-top: 50px;
+}
+
+.demo-button{
+    padding: 10px;
+    margin-right: 100px;
+    background: linear-gradient(rgb(131, 91, 219), #150625);
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.demo-button:hover{
+    cursor: pointer;
+}
+
+.names-nav{
+    padding: 10px;
+    font-size: large;
+    font-family: 'Lato', sans-serif;
+}
+
+.words{
+    margin-bottom: 250px;
+}
+// .meet-the-devs{
+//     height: 100vh;
+//     background-color: #07a2a0;
+// }
+
+// .big-div{
+//     overflow-y: scroll;
+// }

@@ -31,6 +31,7 @@ class MainPage extends React.Component{
         const matches = Object.values(this.props.matches)
         return (
           <div>
+                   
                 <div className="nav-bar">
                      <NavBar/>
                  </div>
@@ -44,13 +45,8 @@ class MainPage extends React.Component{
                     })
                   }
                  </div>
-                <div>
                
-                    <div>
-                      <Link to={`/users/${this.props.currentUser.id}`}><button>
-                      User Profile</button></Link>
-                    </div>
-                </div>
+             
 
             <footer>
               Copyright &copy; 2022 Lab

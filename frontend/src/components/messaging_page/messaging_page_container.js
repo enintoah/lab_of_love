@@ -1,15 +1,14 @@
 import { connect } from 'react-redux';
-import MessagingPage from './messaging_page';
+import MessagingPage from './messaging_page'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-
+    userProfiles: state.entities.userProfiles,
   }
 };
 
 const mapDispatchToProps = dispatch => {
   return{
-    
   }
 }
 
