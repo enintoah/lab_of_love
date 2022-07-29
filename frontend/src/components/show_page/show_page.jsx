@@ -57,17 +57,17 @@ class Show extends React.Component{
                     </div>
 
                         </div>
-                        <div className="show-buttons">
-                            <Link to={`/users/${this.props.currentUser.id}/edit`}>
+                        {/* <div className="show-buttons">
+                            <Link to={`/users/${this.props.currentUser.id}/edit`}/>
                             <Link to={`/users/${currentUser.user_id}/edit`}>
                                 <button className="button-style">Edit</button>
                             </Link>
-                            {/* Will link to edit and delete functions */}
+                            Will link to edit and delete functions
                             <button className="button-style delete-button" onClick={() => alert("You cannot delete the demo user profile.")}>Delete</button>
-                        </div>
+                        </div> */}
 
                 </div>
-            </div>
+            {/* </div> */}
         </div>
         )
     }

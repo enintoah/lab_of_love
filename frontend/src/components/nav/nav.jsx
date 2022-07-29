@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {Link, Redirect, withRouter} from 'react-router-dom'
-import {AiOutlineMenu} from "react-icons/ai";
 
 
 class NavBar extends React.Component{
@@ -53,7 +52,6 @@ class NavBar extends React.Component{
 
                            <div className='menu'>
                                 <button onclick={this.showMenu} >
-                                   <AiOutlineMenu size="2em"/>
                                  </button>
                                   
                                   <div className='menu-dropdown'>

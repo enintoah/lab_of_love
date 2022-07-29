@@ -21,9 +21,8 @@ const App = () => (
         <Route path='/welcome' component={Welcome}/>
         <AuthRoute path="/login" component={LoginForm}/>
         <AuthRoute path="/signup" component={SignupForm}/>
-        <ProtectedRoute exact path="/messaging/:match_id" component={MessagingPage} />
         <ProtectedRoute exact path="/users/:user_id" component={ShowPage} />
-        <Route exact path="/messaging/:match_id" component={MessagingPageContainer} />
+        <ProtectedRoute exact path="/messaging/:match_id" component={MessagingPageContainer} />
         <Route exact path="/users/:user_id" component={ShowPage} />
         {/* Redirect */}
         <ProtectedRoute exact path="/users/:user_id/edit" component={EditPage}/>
