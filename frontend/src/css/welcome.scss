@@ -17,7 +17,7 @@
     border-radius: 20px;
     border: none;
     // margin-top: 70px;
-    margin-left: 20px;
+    margin-left: 40px;
     // background: linear-gradient() ;
     background: linear-gradient(#000000, #960000);
     color: white;
@@ -39,7 +39,7 @@
 .login-signup-welcomepage{
     display: flex;
     align-items: center;
-    margin-top: 70px;
+    margin-top: 40px;
 }
 
 .top-logo{
@@ -78,10 +78,10 @@
     font-family: 'Lato', sans-serif;
     padding-left: 100px;
     // margin-bottom: 100px;
-    text-shadow: 0px 4px rgb(156, 156, 156);
+    text-shadow: 0px 4px rgb(0, 0, 0);
     // padding-top: 100px;
     // margin-top: 10px;
-    color: rgb(46, 9, 126);
+    color: rgb(248, 120, 235);
 }
 
 .dev-name{
@@ -97,12 +97,24 @@
     align-items: center;
 }
 
+.test-your-skills{
+    margin-top: 40px;
+    margin-left: 100px;
+}
+
+.test-your-skills-h1{
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+}
+
 .welcome-image{
     // margin-bottom: 100px;
     z-index: 999999;
     width: 500px;
     margin-right: 70px;
-    margin-bottom: 250px;
+    margin-bottom: 200px;
     // margin-top: 50px;
 }
 
@@ -126,7 +138,7 @@
 }
 
 .words{
-    margin-bottom: 250px;
+    margin-bottom: 200px;
 }
 // .meet-the-devs{
 //     height: 100vh;

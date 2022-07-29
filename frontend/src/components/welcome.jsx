@@ -31,7 +31,7 @@ class Welcome extends React.Component{
                                     </button>
                                 </Link>
 
-                                <a href="bottom-welcome-page">
+                                <a href="meet-the-devs">
                                     <button className='get-devs'>
                                         Meet the team!
                                     </button>
@@ -43,12 +43,15 @@ class Welcome extends React.Component{
                                 </button> 
                                 </Link> */}
                         </div>
+                        <div className='test-your-skills'>
+                                <h1 className='test-your-skills-h1'>Test your abilities in the labs of love!</h1>
+                        </div>
                     </div>
                     <div className='image-div'>
                         <img className="welcome-image" src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/logo+(2).png"/>
                     </div>
                 </div>
-                <a id='bottom-welcome-page'>
+                {/* <a id='bottom-welcome-page'> */}
                     <div className='meet-the-devs'>
                         <div className='dev-card anthonie'>
                             <h1 className='dev-name'>Anthonie</h1>
@@ -63,7 +66,7 @@ class Welcome extends React.Component{
                             <h1 className='dev-name'>Jacob</h1>
                         </div>
                     </div>
-                </a>
+                {/* </a> */}
            </div>
         )
      }
