@@ -6,7 +6,7 @@ import MainPageContainer from './main_page/main_page_container';
 import LoginForm from './session/login_form_container';
 import SignupForm from './session/signup_form_container';
 // import NavContainer from './nav/nav_container';
-import Welcome from './welcome'
+import Welcome from './welcome_container'
 import ShowPage from './show_page/show_page_container';
 import EditPage from './show_page/edit_page_container';
 import { Redirect } from 'react-router-dom';
