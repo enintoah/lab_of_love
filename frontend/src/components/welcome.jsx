@@ -4,6 +4,12 @@ import NavBar from './nav/nav_container';
 
 class Welcome extends React.Component{
 
+    demoLogin(e){
+        e.preventDefault();
+        this.props.demo();
+  }
+
+
      render(){
         return(
             <div className='big-div'>
@@ -16,7 +22,7 @@ class Welcome extends React.Component{
                         <h1 className='names-nav'>Jacob</h1>
                     </div>
                     <div>
-                        <button className='demo-button'>Try as Demo</button>
+                        <button className='demo-button' onClick={e =>this.demoLogin(e)}>Try as Demo</button>
                     </div>
                 </div>
                 <div className='upper-page'>

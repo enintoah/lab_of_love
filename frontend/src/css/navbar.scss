@@ -6,22 +6,27 @@
   align-items: center;
   width: 100vw;
   height: 10vh;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+
+  box-shadow: 0px 8px 8px 0px rgba(96, 83, 83, 0.5);
   // background-color: burlywood;
 }
 
 .nav{
-  width: 80%;
+  width: 80vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
   flex-direction: row;
+  gap:70rem;
   // border: 1px solid lightgrey;
   // background-color: black;
 }
+
 .lol img{
   width:220px;
   height:50px;
+  margin-left: 10%;
+  position: relative;
 }
 
 .links{
@@ -29,6 +34,7 @@
    flex-direction: row;
    justify-content: space-between;
    align-items: center;
+   gap:20px;
    
 }
 
@@ -39,11 +45,19 @@
 .links button{
   margin-left: 15px;
 }
+.img-div{
+   padding-left: 17px;
+}
 
 .navbar-img{
   position: relative;
-  display: block;
+  padding: 0;
+}
 
+.img-div:hover{
+ 
+  cursor: pointer;
+  box-shadow: 2px 2px 2px 2px rgba(3, 6, 41, 0.2);
 }
 
 .profile-tag{
@@ -51,10 +65,13 @@
   position: absolute;
   margin-top: 3px;
   z-index: 9999;
+  font-size: 20px;
 }
 
-.links:hover .profile-tag{
+.img-div:hover .profile-tag{
   display: block;
+  transition: all ease 2s;
+ 
 }
 
 .lol a{
@@ -85,19 +102,82 @@
 
 .navbar-img{
   height: 6vh;
+  padding:0;
   aspect-ratio: 1;
   cursor: pointer;
 }
 
-
-
-
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
+.menu {
+  position:relative;
+  display:block;
+  
+}
+.name-menu{
+    display:flex;
+    flex-direction: row;
+    gap:20px;
 }
 
+/* style for the button */
+.menu:before {
+  content: "\2630 \a0"; 
+  color:black;
+  padding: 5px 10px;
+  border: 1px solid lightgray;
+  border-radius:3px;
+  background: white;
 
+
+
+}
+// .menu:focus{ pointer-events:none; }
+
+.menu:hover{
+  cursor: pointer;
+}
+
+/* If :focus detected the dropdown menu is displayed by making it visible */
+.menu:hover .menu-dropdown { 
+     opacity:1; 
+    visibility:visible;
+    transition: 0.5s ;
+      }
+
+
+
+/* style for the dropdown box */
+.menu-dropdown {
+  background-color: #364656;
+  width: auto;
+  height:auto;
+  margin:3px 0 0 0;
+  padding: 10px;
+  border-radius:3px;
+  border:1px lightgrey solid;
+  border-radius:1px;
+  pointer-events: auto;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 1s;
+  background: white;
+}
+
+/* style the links in the dropdown */
+.menu-dropdown > button{
+  background:transparent;
+  border:none;
+  outline:0;
+  display:block;
+  color:black;
+  text-decoration:none;
+  width:160px;
+  padding:5px;
+}
+
+.menu-dropdown > button:hover{
+      cursor: pointer;
+      background-color: lightblue;
+}
 

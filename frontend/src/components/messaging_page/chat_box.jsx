@@ -72,16 +72,18 @@ class ChatBox extends React.Component {
     if (!this.props.messages) {
       return null
     } else {
-      const messages = Object.values(this.props.messages)
+      const messages = Object.values(this.props.messages).reverse()
       return (
-        <div>
-          <h2>Hello world, im dad</h2>
-          {messages.map(el => {
-            return (<Message removeMessage={this.removeMessage} message={el} currentUser={this.props.currentUser} />)
-          })}
-  
-          <textarea name="" id="" cols="30" rows="10" onChange={this.updateState} placeholder={`message ${this.matchName}`} value={this.state.body}></textarea>
-          <button onClick={this.sendMessage}>Send</button>
+        <div className="chatbox-all">
+          <div className="chatbox-messages">
+            {messages.map(el => {
+              return (<Message removeMessage={this.removeMessage} message={el} currentUser={this.props.currentUser} />)
+            })}
+          </div>
+          <div className="chatbox-textarea">
+            <textarea cols="30" rows="10" onChange={this.updateState} placeholder={`message ${this.matchName}`} value={this.state.body}></textarea>
+            <button onClick={this.sendMessage}>Send</button>
+          </div>
         </div>
       )
     }
