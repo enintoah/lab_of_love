@@ -1,0 +1,40 @@
+.chat-box-container {
+  border: 1px solid black;
+  width: 50vw;
+}
+
+.chatbox-textarea {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 1%;
+}
+
+.chatbox-textarea > textarea {
+  resize: none;
+  width: 45vw;
+  height: 13vh;
+}
+
+.chatbox-all {
+  overflow: hidden;
+}
+
+.chatbox-messages {
+  height: 75vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+  background-color: red;
+  margin-bottom: 5%;
+}
+
+.currentUser {
+  position: relative;
+  right: 0;
+}
+
+.chatbox-messages > .currentUser {
+  display: flex;
+  justify-content: flex-end;
+}
