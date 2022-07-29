@@ -35,6 +35,7 @@ class MainPage extends React.Component{
                 <div className="nav-bar">
                      <NavBar/>
                  </div>
+                 <h1>This week's experiments</h1>
                  <div className="cards-container">
                   {
                     matches.map(el => {

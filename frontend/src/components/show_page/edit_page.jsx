@@ -1,20 +1,27 @@
 import React from "react";
+import { updateUserProfile } from "../../util/user_profile_util";
+import { withRouter } from 'react-router-dom'
+
 
 class Edit extends React.Component{
 
  constructor(props){
     super(props);
-    //   this.state =  this.props.currentUserProfile
     this.state = {
+          imageUrl: this.props.currentUserProfile.imageUrl,
           name:this.props.currentUserProfile.name,
           description:this.props.currentUserProfile.description,
-          interests:this.props.currentUserProfile.interests,
+          interests1:this.props.currentUserProfile.interests[0],
+          interests2:this.props.currentUserProfile.interests[1],
+          interests3:this.props.currentUserProfile.interests[2],
           gender:this.props.currentUserProfile.gender,
-          personality:this.props.currentUserProfile.personality,
+          personality1:this.props.currentUserProfile.personality[0],
+          personality2:this.props.currentUserProfile.personality[1],
+          personality3:this.props.currentUserProfile.personality[2],
           loveLanguage:this.props.currentUserProfile.loveLanguage,
           happinessLevel:this.props.currentUserProfile.happinessLevel,
           commitmentLevel:this.props.currentUserProfile.commitmentLevel,
-          age:this.props.currentUserProfile.age.toString(),
+          age:this.props.currentUserProfile.age,
           location:this.props.currentUserProfile.location,
           user_id:this.props.currentUserProfile.user_id,
           pronouns:this.props.currentUserProfile.pronouns,
@@ -26,10 +33,11 @@ class Edit extends React.Component{
 
     handleSubmit(e){
         e.preventDefault()
-        
         let newState = Object.assign({},this.state)
-        // console.log(newState)
-        this.props.editUserProfile(newState)
+        console.log(newState)
+        this.props.editUserProfile(newState).then(() => {
+            this.props.history.push(`/users/${this.props.currentUserProfile.user_id}`)
+        })
     }
 
     update(property){
@@ -44,33 +52,45 @@ class Edit extends React.Component{
               <br />
               <form onSubmit={this.handleSubmit}>
                 
-                     <label>Name</label>
+                     {/* <label>Name</label>
                     
                        <br />
                        <input 
                         type="text" 
                         value={this.state.name}
-                        onChange={this.update("name")}/>
+                        onChange={this.update("name")}/> */}
                        <br />
                        <br />
-                       <label>Description</label>
+                       <label>Description:
                         <br />
                         <textarea cols="30"
                             rows="10"
                             value={this.state.description}
                             onChange={this.update("description")}
                             />
+                        </label>
                          <br />
                          <br />
-                         <label>passions</label> 
-                          <input 
-                              type="text"
-                              value={this.state.interests}
-                              onChange={this.update("interests")}/>
+                         <label>Passions:
+                            <input 
+                            type="text"
+                            value={this.state.interests1}
+                            onChange={this.update("interests1")}/>
+
+                            <input 
+                            type="text"
+                            value={this.state.interests2}
+                            onChange={this.update("interests2")}/>
+
+                            <input 
+                            type="text"
+                            value={this.state.interests3}
+                            onChange={this.update("interests3")}/>
+                        </label> 
                          <br />
                         <br />
-                        <div className="radio">
-                        <p>Gender:</p>
+                        {/* <div className="radio"> */}
+                        {/* <p>Gender:</p>
                             <label>
                                 <input
                                 type="radio"
@@ -80,9 +100,9 @@ class Edit extends React.Component{
                                 />
                                 Male
                             </label>
-                            </div>
+                            </div> */}
 
-
+{/* 
                             <div className="radio">
                                 <label>
                                     <input
@@ -93,28 +113,38 @@ class Edit extends React.Component{
                                     />
                                     Female
                                 </label>
-                            </div>
+                            </div> */}
                             <br />
                             
-                            {/* <label>age
+                            <label>age
                             <input type="text" 
                                value={this.state.age}
                                 onChange={this.update("age")} />
-                            </label> */}
+                            </label>
                              <br />
-                            <label>personalities</label> 
+                            <label>personalities
                             <br />
                             <input 
                               type="text"
-                              value={this.state.personality}
-                              onChange={this.update("personality")}/>
+                              value={this.state.personality1}
+                              onChange={this.update("personality1")}/>
+
+                            <input 
+                              type="text"
+                              value={this.state.personality2}
+                              onChange={this.update("personality2")}/>
+
+                            <input 
+                              type="text"
+                              value={this.state.personality3}
+                              onChange={this.update("personality3")}/>
+                            </label> 
                            <br />
                            <br />
 
                           <label htmlFor="lang">loveLanguage</label>
                            <br />
-                           <select name="languages" id="lang">
-                              <option value="select">--Select a language--</option>
+                           <select onChange={this.update('loveLanguage')} name="languages" value={this.state.loveLanguage}>
                                <option value="words of affirmation">words of affirmation</option>
                                <option value="quality time">quality time</option>
                                <option value="receiving gifts">receiving gifts</option>
@@ -136,7 +166,7 @@ class Edit extends React.Component{
                            <label htmlFor="happiness" id="happiness-label">happinessLevel</label>
                            <br />
                              <input type="range" min={1} max={100} value={parseInt(this.state.happinessLevel)}
-                                class="slider" id="happiness-label" 
+                                className="slider" id="happiness-label" 
                                 onChange={this.update("happinessLevel")}/>
                           </div>
 
@@ -144,7 +174,7 @@ class Edit extends React.Component{
                           <label htmlFor="commitment" id="commitment-label">commitmentLevel</label>
                           <br />
                              <input type="range" min={1} max={100} value={parseInt(this.state.commitmentLevel)} 
-                                class="slider" id="commitment-label"
+                                className="slider" id="commitment-label"
                                 onChange={this.update("commitmentLevel")} />
                           </div>
 
@@ -160,4 +190,4 @@ class Edit extends React.Component{
 }
 
 
-export default Edit
+export default withRouter(Edit)

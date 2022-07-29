@@ -7,8 +7,9 @@ class Show extends React.Component{
     render(){
         const currentUser = this.props.currentUser;
         return(
-            <div className="show-page-contents">
+            <div className="show-p">
                 <NavCont />
+            <div className="show-page-contents">
                 <div className="page-container">
                     <div className="color-behind"></div>
                     <div className="color-behind2"></div>
@@ -44,12 +45,14 @@ class Show extends React.Component{
                         </div>
                         <div className="show-buttons">
                             <Link to={`/users/${this.props.currentUser.id}/edit`}>
+                            <Link to={`/users/${currentUser.user_id}/edit`}>
                                 <button className="button-style">Edit</button>
                             </Link>
                             {/* Will link to edit and delete functions */}
                             <button className="button-style delete-button" onClick={() => alert("You cannot delete the demo user profile.")}>Delete</button>
                         </div>
                 </div>
+            </div>
             </div>
         )
     }
