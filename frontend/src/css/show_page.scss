@@ -12,6 +12,7 @@
     align-items: center;
     box-shadow: 6px 6px 6px rgb(139, 139, 139);
     margin: 50px;
+    margin-top:100px;
 }
 
 .inner-page{
@@ -66,7 +67,7 @@
     height: 100vh;
     // align-items: center;
     // width: 100%;
-    z-index: 999;
+    z-index: 99;
 }
 
 .show-buttons{
@@ -168,14 +169,4 @@
     font-size: large;
     font-weight: bolder;
     padding: 20px;
-}
-
-.upper-page{
-    height: 100vh;
-    background-color: black;
-}
-
-.meet-the-devs{
-    height: 100vh;
-    background-color: cornflowerblue;
 }
