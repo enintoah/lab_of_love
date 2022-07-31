@@ -14,10 +14,10 @@
 .nav{
   width: 80vw;
   display: flex;
-  justify-content: left;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
-  gap:50rem;
+  gap:60rem;
   // border: 1px solid lightgrey;
   // background-color: black;
 }
@@ -29,12 +29,13 @@
   position: relative;
 }
 
+
 .links{
    display: flex;
    flex-direction: row;
-   justify-content: space-between;
+   justify-content: flex-end;
    align-items: center;
-   gap:20px;
+   gap:30px;
    
 }
 
@@ -47,6 +48,8 @@
 }
 .img-div{
    padding-left: 17px;
+  
+  
 }
 
 .navbar-img{
@@ -65,7 +68,10 @@
   position: absolute;
   margin-top: 3px;
   z-index: 9999;
-  font-size: 20px;
+  font-size: 16px;
+  right:220px;
+  top:60px;
+  text-decoration: underline;
 }
 
 .img-div:hover .profile-tag{
@@ -112,11 +118,7 @@
   display:block;
   
 }
-.name-menu{
-    display:flex;
-    flex-direction: row;
-    gap:20px;
-}
+
 
 /* style for the button */
 .menu:before {
@@ -147,22 +149,24 @@
 
 /* style for the dropdown box */
 .menu-dropdown {
+  display: flex;
+  flex-direction: column;
   background-color: #364656;
   width: auto;
   height:auto;
-  margin:3px 0 0 0;
+  margin:6px 29px 0 0;
   padding: 10px;
   border-radius:3px;
   border:1px lightgrey solid;
   border-radius:1px;
   pointer-events: auto;
   position: absolute;
-  z-index: 1;
+  z-index: 999;
   opacity: 0;
   visibility: hidden;
   transition: visibility 1s;
   background: white;
-  
+  right:0;
 }
 
 /* style the links in the dropdown */

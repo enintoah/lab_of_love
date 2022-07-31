@@ -1,12 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,Redirect } from 'react-router-dom';
 import NavBar from './nav/nav_container';
 
 class Welcome extends React.Component{
-
+  
+    
     demoLogin(e){
         e.preventDefault();
-        this.props.demo();
+        console.log('props',this.props)
+        this.props.demo({email:"demo@gmail.com",password:"123456"});
+
+  }
+
+  componentWillReceiveProps() {
+   
+      this.props.history.push('/');
+
   }
 
 

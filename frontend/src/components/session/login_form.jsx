@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from  '../nav/nav_container'
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 class LoginForm extends React.Component {

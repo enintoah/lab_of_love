@@ -8,16 +8,12 @@ class NavBar extends React.Component{
         super(props);
         this.logoutUser = this.logoutUser.bind(this);
     
-
-     
     }
     
     logoutUser(e){
         e.preventDefault();
-      
         this.props.logout()
-
-    }
+     }
     
   
     render() {
@@ -43,8 +39,6 @@ class NavBar extends React.Component{
                                               onClick={()=> (this.props.history.push(`/users/${userId}`))} 
                                               src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png">
                                       </img>
-                                        
-                      
                                 </div>
                                 <div>
                                       <h3>{name}</h3>
@@ -53,16 +47,14 @@ class NavBar extends React.Component{
                            </div>
                         
                            <div className='menu'>
+                           
                                   <div className='menu-dropdown'>
                                       <button > <Link to={`/messaging/62e037d34780df32d1a79921`}> messages</Link></button>
                                       <button > <Link to={`/users/${userId}/edit`}> edit profile</Link></button>
                                       <button onClick={this.logoutUser}>Logout</button>
                                   </div>
-                           </div>
-               </div>
-
-                  
-                      
+                            </div>
+                    </div>
              </div>
          );
       }else{
