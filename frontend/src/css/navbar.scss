@@ -17,7 +17,7 @@
   justify-content: left;
   align-items: center;
   flex-direction: row;
-  gap:70rem;
+  gap:50rem;
   // border: 1px solid lightgrey;
   // background-color: black;
 }
@@ -162,6 +162,7 @@
   visibility: hidden;
   transition: visibility 1s;
   background: white;
+  
 }
 
 /* style the links in the dropdown */
@@ -177,6 +178,7 @@
 }
 
 .menu-dropdown > button:hover{
+      margin-right:15%;
       cursor: pointer;
       background-color: lightblue;
 }
