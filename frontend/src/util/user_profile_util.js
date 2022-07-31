@@ -12,3 +12,8 @@ export const updateUserProfile =(profile) =>{
    console.log(profile)
     return axios.patch(`/api/user_profile/${profile.user_id}`, profile)
 }
+
+export const createUserProfile = (profile) =>{
+    console.log(profile)
+    return axios.post(`/api/user_profile/`,profile)
+}

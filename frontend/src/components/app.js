@@ -9,6 +9,7 @@ import SignupForm from './session/signup_form_container';
 import Welcome from './welcome_container'
 import ShowPage from './show_page/show_page_container';
 import EditPage from './show_page/edit_page_container';
+import CreateProfile from './sign_up_profile/sign_up_profile_container';
 import { Redirect } from 'react-router-dom';
 import MessagingPageContainer from './messaging_page/messaging_page_container';
 
@@ -18,11 +19,12 @@ const App = () => (
         <Route path='/welcome' component={Welcome}/>
         <AuthRoute path="/login" component={LoginForm}/>
         <AuthRoute path="/signup" component={SignupForm}/>
-        <ProtectedRoute exact path="/users/:user_id" component={ShowPage} />
-        <ProtectedRoute exact path="/messaging/:match_id" component={MessagingPageContainer} />
+        <Route path='/users/:user_id/createProfile' component={CreateProfile}/>
+        <ProtectedRoute exact path="/users/:user_id" component={ShowPage}/>
+        <ProtectedRoute exact path="/messaging/:match_id" component={MessagingPageContainer}/>
         <Route exact path="/users/:user_id" component={ShowPage} />
         <ProtectedRoute exact path="/users/:user_id/edit" component={EditPage}/>
-        <Route exact path="/" component={MainPageContainer} />
+        <ProtectedRoute exact path="/" component={MainPageContainer}/>
         <Redirect to="/welcome"/>
     </Switch>
     </div>

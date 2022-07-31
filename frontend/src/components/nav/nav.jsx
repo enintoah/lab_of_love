@@ -17,13 +17,9 @@ class NavBar extends React.Component{
     
   
     render() {
-     
       const userId = this.props.currentUser.user_id;
       const name = this.props.currentUser.name
-
-
       if(this.props.loggedIn){
-          
          return(
               <div className='nav'>
 
@@ -32,6 +28,8 @@ class NavBar extends React.Component{
               </div>
 
               <div className='links'>
+
+                           
                     
                            <div className='img-div'>
                                 <div>
@@ -40,11 +38,18 @@ class NavBar extends React.Component{
                                               src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png">
                                       </img>
                                 </div>
+                             
                                 <div>
                                       <h3>{name}</h3>
                                 </div>    
-                                 <div className='profile-tag'>my profile</div>
-                           </div>
+
+                                <div className='profile-tag'>
+                                  my profile
+                               </div>
+
+                      
+
+                          </div>
                         
                            <div className='menu'>
                            
