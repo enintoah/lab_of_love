@@ -26,9 +26,10 @@ const messagesReducer = (state = {}, action) => {
     case EDIT_MESSAGE: 
       newState[action.message._id].type = 'edit'
       return newState;
-    case RECEIVE_EDIT_MESSAGE:
-      delete newState[action.message._id].type
-      return newState
+    // case RECEIVE_EDIT_MESSAGE:
+    //   newState
+    //   delete newState[action.message._id].type
+    //   return newState
     case CLEAR_MESSAGES:
       return {}
     case RECEIVE_USER_LOGOUT: 

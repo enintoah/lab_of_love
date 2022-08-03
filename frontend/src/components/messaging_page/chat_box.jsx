@@ -24,6 +24,7 @@ class ChatBox extends React.Component {
       this.props.destroyMessage(id)
     })
 
+    this.receiveEdited = this.receiveEdited.bind(this)
     this.removeMessage = this.removeMessage.bind(this)
     this.sendMessage = this.sendMessage.bind(this)
     this.updateState = this.updateState.bind(this)
@@ -68,6 +69,16 @@ class ChatBox extends React.Component {
     this.setState({body: ""})
   }
 
+  receiveEdited(id, state) {
+    const message = {message: state.body}
+    MessageUtil.updateMessage(id, message)
+      .then(mes => {
+        this.props.receiveMessage(mes.data)
+        this.socket.emit('new message', mes.data)
+      })
+      .catch(err => console.log(err))
+  }
+
   render() {
     if (!this.props.messages) {
       return null
@@ -77,7 +88,7 @@ class ChatBox extends React.Component {
         <div className="chatbox-all">
           <div className="chatbox-messages">
             {messages.map(el => {
-              return (<Message editMessage={this.props.editMessage} removeMessage={this.removeMessage} message={el} currentUser={this.props.currentUser} />)
+              return (<Message receiveEdited={this.receiveEdited} editMessage={this.props.editMessage} removeMessage={this.removeMessage} message={el} currentUser={this.props.currentUser} />)
             })}
           </div>
           <div className="chatbox-textarea">

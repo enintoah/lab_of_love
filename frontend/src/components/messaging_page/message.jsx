@@ -8,10 +8,18 @@ class Message extends React.Component {
       body: this.props.message.message
     }
 
+    this.sendEdited = this.sendEdited.bind(this)
     this.beginEdit = this.beginEdit.bind(this)
     this.checkOwner = this.checkOwner.bind(this)
     this.checkOwnerButtons = this.checkOwnerButtons.bind(this)
     this.deleteMessage = this.deleteMessage.bind(this)
+    this.updateState = this.updateState.bind(this)
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props !== prevProps) {
+      this.setState({body: this.props.message.message})
+    }
   }
 
   deleteMessage(e) { 
@@ -43,6 +51,16 @@ class Message extends React.Component {
     }
   }
 
+  sendEdited(e) {
+    e.preventDefault()
+    this.props.receiveEdited(this.props.message._id, this.state)
+  }
+
+  updateState(e) {
+    e.preventDefault()
+    this.setState({body: e.target.value})
+  }
+
   render() {
     if (!this.props.message.type) {
       return (
@@ -54,8 +72,8 @@ class Message extends React.Component {
     } else {
       return (
         <div>
-          <textarea name="" id="" cols="30" rows="10"></textarea>
-          <button></button>
+          <textarea value={this.state.body} onChange={this.updateState} cols="30" rows="10"></textarea>
+          <button onClick={this.sendEdited}>Send</button>
         </div>
       )
     }
