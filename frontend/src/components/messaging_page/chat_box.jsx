@@ -77,7 +77,7 @@ class ChatBox extends React.Component {
         <div className="chatbox-all">
           <div className="chatbox-messages">
             {messages.map(el => {
-              return (<Message removeMessage={this.removeMessage} message={el} currentUser={this.props.currentUser} />)
+              return (<Message editMessage={this.props.editMessage} removeMessage={this.removeMessage} message={el} currentUser={this.props.currentUser} />)
             })}
           </div>
           <div className="chatbox-textarea">
