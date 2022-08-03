@@ -3,8 +3,8 @@ import { io } from "socket.io-client";
 import * as MessageUtil from './../../util/message_util'
 import Message from "./message";
 
-const ENDPOINT = "http://localhost:5050";
-
+// const ENDPOINT = "http://localhost:5050";
+const ENDPOINT = "https://laboflove.herokuapp.com";
 
 class ChatBox extends React.Component {
   constructor(props) {

@@ -4,7 +4,7 @@ const Message = require('../../models/Message')
 const passport = require('passport');
 
 router.post('/', (req, res) => {
-  Message.find({$or: [{recipient: req.body.user1, sender: req.body.user2}, {recipient: req.body.user2, sender: req.body.user1}]}).sort({"createdAt": 1}).limit(20).then(mes => {
+  Message.find({$or: [{recipient: req.body.user1, sender: req.body.user2}, {recipient: req.body.user2, sender: req.body.user1}]}).sort({"createdAt": 1}).then(mes => {
     return res.json(mes)
   })
 })
