@@ -41,6 +41,6 @@ export const editUserProfile = profile => dispatch => (
      updateUserProfile(profile).then(profile => dispatch(receiveCurrentUserProfile(profile)))
 )
 
-export const createSignInProfile = profile => dispatch =>(
-     createUserProfile(profile).then(profile =>dispatch(receiveCurrentUserProfile(profile)))                                      
+export const createSignInProfile = profile => dispatch => (
+     createUserProfile(profile).then(profile => dispatch(receiveCurrentUserProfile(profile)))                                      
 )

@@ -3,7 +3,7 @@ import MainPage from './main_page';
 import { getCurrentUserProfile, getUserProfile, getMatches } from '../../actions/user_profile_actions';
 import { fetchMessages } from '../../actions/message_actions';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     currentUser: state.session.user,
     matches: state.entities.userProfiles
@@ -15,7 +15,7 @@ const mapDispatchToProps = dispatch => {
     getCurrentUserProfile: (id) => dispatch(getCurrentUserProfile(id)),
     getUserProfile: (id) => dispatch(getUserProfile(id)),
     getMatches: (id) => dispatch(getMatches(id)),
-    fetchMessages: (users) => dispatch(fetchMessages(users))
+    fetchMessages: (users) => dispatch(fetchMessages(users)) 
   }
 }
 
