@@ -28,7 +28,8 @@ class Welcome extends React.Component{
                         <h1 className='names-nav'>Ignacio </h1>
                         <h1 className='names-nav'>Jacob</h1>
                     </div>
-                    <div>
+                    <div className="button-holder">
+                        <button className='login-button' onClick={() => this.props.history.push("/login")}>Login</button>
                         <button className='demo-button' onClick={e =>this.demoLogin(e)}>Try as Demo</button>
                     </div>
                 </div>

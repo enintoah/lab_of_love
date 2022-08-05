@@ -11,6 +11,12 @@
     padding: 20px;
 }
 
+.button-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .get-devs{
     font-size: x-large;
     font-weight: bolder;
@@ -127,7 +133,20 @@
     border-radius: 10px;
 }
 
+.login-button{
+    padding: 10px;
+    margin-right: 10px;
+    background: linear-gradient(rgb(131, 91, 219), #150625);
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
 .demo-button:hover{
+    cursor: pointer;
+}
+
+.login-button:hover{
     cursor: pointer;
 }
 

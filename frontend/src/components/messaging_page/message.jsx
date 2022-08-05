@@ -8,9 +8,18 @@ class Message extends React.Component {
       body: this.props.message.message
     }
 
+    this.sendEdited = this.sendEdited.bind(this)
+    this.beginEdit = this.beginEdit.bind(this)
     this.checkOwner = this.checkOwner.bind(this)
     this.checkOwnerButtons = this.checkOwnerButtons.bind(this)
     this.deleteMessage = this.deleteMessage.bind(this)
+    this.updateState = this.updateState.bind(this)
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props !== prevProps) {
+      this.setState({body: this.props.message.message})
+    }
   }
 
   deleteMessage(e) { 
@@ -19,11 +28,17 @@ class Message extends React.Component {
     this.props.removeMessage(id);
   }
 
+  beginEdit(e) {
+    e.preventDefault();
+    console.log(this.props.message);
+    this.props.editMessage(this.props.message);
+  }
+
   checkOwnerButtons() {
     if (this.props.message.sender === this.props.currentUser.id) {
       return (
         <div>
-          <button>Edit</button>
+          <button onClick={this.beginEdit}>Edit</button>
           <button onClick={this.deleteMessage} value={this.props.message._id}>Delete</button>
         </div>
       )
@@ -36,13 +51,32 @@ class Message extends React.Component {
     }
   }
 
+  sendEdited(e) {
+    e.preventDefault()
+    this.props.receiveEdited(this.props.message._id, this.state)
+  }
+
+  updateState(e) {
+    e.preventDefault()
+    this.setState({body: e.target.value})
+  }
+
   render() {
-    return (
-      <div className={this.checkOwner()}>
-        <h2>{this.props.message.message}</h2>
-        {this.checkOwnerButtons()}
-      </div>
-    )
+    if (!this.props.message.type) {
+      return (
+        <div className={this.checkOwner()}>
+          <h2>{this.props.message.message}</h2>
+          {this.checkOwnerButtons()}
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <textarea value={this.state.body} onChange={this.updateState} cols="30" rows="10"></textarea>
+          <button onClick={this.sendEdited}>Send</button>
+        </div>
+      )
+    }
   }
 }
 

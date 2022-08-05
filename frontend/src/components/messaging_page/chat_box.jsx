@@ -3,8 +3,8 @@ import { io } from "socket.io-client";
 import * as MessageUtil from './../../util/message_util'
 import Message from "./message";
 
-const ENDPOINT = "http://localhost:5050";
-
+// const ENDPOINT = "http://localhost:5050";
+const ENDPOINT = "https://laboflove.herokuapp.com";
 
 class ChatBox extends React.Component {
   constructor(props) {
@@ -24,15 +24,20 @@ class ChatBox extends React.Component {
       this.props.destroyMessage(id)
     })
 
+    this.receiveEdited = this.receiveEdited.bind(this)
     this.removeMessage = this.removeMessage.bind(this)
     this.sendMessage = this.sendMessage.bind(this)
     this.updateState = this.updateState.bind(this)
-    this.matchName = this.props.userProfiles[this.props.matchId].name
+  }
+
+  componentDidMount() {
+    const users = { user1: this.props.currentUser.id, user2: this.props.matchId};
+    this.props.fetchMessages(users);
   }
 
   componentWillUnmount() {
     this.props.clearMessages()
-    this.socket.emit('disconnect')
+    this.socket.disconnect()
   }
 
   updateState(e) {
@@ -68,8 +73,18 @@ class ChatBox extends React.Component {
     this.setState({body: ""})
   }
 
+  receiveEdited(id, state) {
+    const message = {message: state.body}
+    MessageUtil.updateMessage(id, message)
+      .then(mes => {
+        this.props.receiveMessage(mes.data)
+        this.socket.emit('new message', mes.data)
+      })
+      .catch(err => console.log(err))
+  }
+
   render() {
-    if (!this.props.messages) {
+    if (this.props.userProfiles === undefined || this.props.matchId === undefined) {
       return null
     } else {
       const messages = Object.values(this.props.messages).reverse()
@@ -77,11 +92,11 @@ class ChatBox extends React.Component {
         <div className="chatbox-all">
           <div className="chatbox-messages">
             {messages.map(el => {
-              return (<Message removeMessage={this.removeMessage} message={el} currentUser={this.props.currentUser} />)
+              return (<Message receiveEdited={this.receiveEdited} editMessage={this.props.editMessage} removeMessage={this.removeMessage} message={el} currentUser={this.props.currentUser} />)
             })}
           </div>
           <div className="chatbox-textarea">
-            <textarea cols="30" rows="10" onChange={this.updateState} placeholder={`message ${this.matchName}`} value={this.state.body}></textarea>
+            <textarea cols="30" rows="10" onChange={this.updateState} placeholder="Say Something" value={this.state.body}></textarea>
             <button onClick={this.sendMessage}>Send</button>
           </div>
         </div>

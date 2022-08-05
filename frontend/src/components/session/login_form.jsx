@@ -32,6 +32,12 @@ class LoginForm extends React.Component {
     });
   }
 
+  demoLogin(e){
+    // e.preventDefault();
+    this.props.login({email:"demo@gmail.com",password:"123456"})
+    this.props.history.push("/");
+  }
+
   // Handle form submission
   handleSubmit(e) {
     e.preventDefault();
@@ -86,7 +92,7 @@ class LoginForm extends React.Component {
             <input className='submit-button' type="submit" value="Login!" />
             {this.renderErrors()}
         </form>
-        <button>Try A Demo!</button>
+            <button className="demo-login-button" onClick={() => this.demoLogin()}>Try A Demo!</button>
       </div>
     );
   }

@@ -57,7 +57,6 @@ class NavBar extends React.Component{
                                       <button > <Link to={`/messaging/62e037d34780df32d1a79921`}> messages</Link></button>
                                       <button > <Link to={`/users/${userId}/edit`}> edit profile</Link></button>
                                       <button onClick={this.logoutUser}>Logout</button>
-                                      
                                   </div>
                             </div>
                     </div>
