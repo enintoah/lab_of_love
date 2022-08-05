@@ -9,6 +9,10 @@ export const fetchMatches = (id) => {
 }
 
 export const updateUserProfile =(profile) =>{
-   console.log(profile)
     return axios.patch(`/api/user_profile/${profile.user_id}`, profile)
+}
+
+export const createUserProfile = (profile) =>{
+    console.log("this is the profile in the createUserProfile util function: ", profile)
+    return axios.post(`/api/user_profile/`, profile)
 }

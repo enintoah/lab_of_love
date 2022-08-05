@@ -17,6 +17,7 @@ router.get('/by_email', (req, res) => {
 // })
 
 router.get('/:user_id', (req, res) => {
+  console.log("this is the fucking id why wont you work: ", req.params.user_id)
   UserProfile.findOne({ user_id: req.params.user_id }).then(profile => {
     if (!profile) {
       const errors = {user_id: "does not exist"}
@@ -61,42 +62,39 @@ router.patch('/:user_id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
+  console.log("this shit runs :)")
   const { errors, isValid } = validateUserProfile(req.body)
 
   if (!isValid) {
+    console.log("shit broke in validations")
     return res.status(400).json(errors)
   }
-
-  UserProfile.findOne({ user_id: req.body.user_id }).then(profile => {
-    if (profile) {
-      errors.user_id = "Profile already exists";
-      return res.status(400).json(errors);
-    } else {
+  
       const newProfile = new UserProfile({
         user_id: req.body.user_id,
+        name: req.body.name,
         description: req.body.description,
-        interests: req.body.interests,
+        interests:[req.body.interests1,req.body.interests2,req.body.interests3],
+        personality: [req.body.personality1,req.body.personality2,req.body.personality3],
         age: req.body.age,
         gender: req.body.gender,
-        personality: req.body.personality,
         loveLanguage: req.body.loveLanguage,
         imageUrl: req.body.imageUrl,
         happinessLevel: req.body.happinessLevel,
         location: req.body.location,
         commitmentLevel: req.body.commitmentLevel,
         pronouns: req.body.pronouns
-      })
-      newProfile
+         })
+       newProfile
         .save()
         .then(profile => {
           return res.json(profile);
         })
         .catch(err => {
+          console.log("I dont even know what this one does but shit broke.", err)
           return res.status(400).json(err)
         })
-    }
-  })
-})
+    })
 
 router.delete('/:user_id', (req, res) => {
   UserProfile.findOneAndDelete({ user_id: req.params.user_id }).then(result => {

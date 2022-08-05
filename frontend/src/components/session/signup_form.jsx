@@ -1,8 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 // import Navbar from  '../nav/nav_container'
-import { Link } from 'react-router-dom';
+import { Link,Redirect } from 'react-router-dom';
 import img from "./Products-Icon@4x.png"
+
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
@@ -38,7 +39,14 @@ class SignupForm extends React.Component {
     });
   }
 
-  handleSubmit(e) {
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.signedIn === true) {
+  //     this.props.history.push('/login');
+  //   }
+
+  //   this.setState({errors: nextProps.errors})
+  // }
+ handleSubmit(e) {
     e.preventDefault();
     let user = {
       email: this.state.email,
@@ -50,10 +58,18 @@ class SignupForm extends React.Component {
     let loginUser = {
       email: this.state.email,
       password: this.state.password
-    };
+    };  
 
     console.log("this is the user being sent:", user);
-    this.props.signup(user).then(this.props.login(loginUser))
+    console.log('this is loginUSer',loginUser)
+
+    this.props.signup(user)
+    .then(() => this.props.history.push(`/users/${user.handle}/createProfile`))
+  //  .then((loginUser) => this.props.login(loginUser))
+
+      // .then(this.props.login(loginUser)
+      //   .then(this.props.history.push(`/users/${user.handle}/createProfile`)))
+   
   }
 
   renderErrors() {

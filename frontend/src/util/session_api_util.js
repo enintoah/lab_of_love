@@ -16,6 +16,6 @@ export const login = (userData) => {
   return axios.post('/api/users/login', userData);
 };
 
-// export const findUserProfilebyEmail = (userData) => {
-//   return axios.
-// }
+export const findUserProfilebyEmail = (userData) => {
+  return axios.post('/api/users/findByEmail', userData)
+}

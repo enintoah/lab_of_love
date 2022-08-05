@@ -1,13 +1,11 @@
 import React from 'react';
-import { Link,Redirect } from 'react-router-dom';
-import NavBar from './nav/nav_container';
+import { Link } from 'react-router-dom';
 
 class Welcome extends React.Component{
   
     
     demoLogin(e){
         e.preventDefault();
-        console.log('props',this.props)
         this.props.demo({email:"demo@gmail.com",password:"123456"});
 
   }

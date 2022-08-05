@@ -40,6 +40,7 @@ module.exports = function validateUserProfile(data) {
   if (Validator.isEmpty(data.pronouns)) {
     errors.pronouns = 'Pronouns field is required'
   }
+
   // if (!Validator.isFloat(data.age, {min: 18})){
   //   errors.age = 'Age field is required'
   // }

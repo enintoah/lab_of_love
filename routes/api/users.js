@@ -28,6 +28,7 @@ router.post("/register", (req, res) => {
   User.findOne({ handle: req.body.handle }).then(user => { 
     if (user) {
       errors.handle = "User already exists";
+      console.log("THIS SHIT EXISTS")
       return res.status(400).json(errors);
     } else {
       const newUser = new User({
@@ -44,7 +45,7 @@ router.post("/register", (req, res) => {
             .save()
             .then(user => {
               const payload = { id: user.id, handle: user.handle };
-
+               console.log(payload)
               jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                 res.json({
                   success: true,
@@ -92,6 +93,12 @@ router.post("/login", (req, res) => {
     });
   });
 });
+
+router.post('/findByEmail', (req, res) => {
+  User.findOne({email: req.body.email}).then(user => { 
+    return res.json(user)
+  })
+})
 
 router.get('/:id', (req, res) => {
   User.findOne({_id: req.params.id }).then(user => {
