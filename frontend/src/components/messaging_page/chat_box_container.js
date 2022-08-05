@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ChatBox from './chat_box';
 import { receiveMessage, clearMessages, receiveDeleteMessage, editMessage, receiveEditMessage } from '../../actions/message_actions';
+import { fetchMessages } from '../../actions/message_actions';
  
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -16,7 +17,8 @@ const mapDispatchToProps = dispatch => {
     receiveMessage: (message) => dispatch(receiveMessage(message)),
     destroyMessage: (id) => dispatch(receiveDeleteMessage(id)),
     editMessage: (message) => dispatch(editMessage(message)),
-    receiveEditMessage: (message) => dispatch(receiveEditMessage(message))
+    receiveEditMessage: (message) => dispatch(receiveEditMessage(message)),
+    fetchMessages: (users) => dispatch(fetchMessages(users))
   }
 }
 

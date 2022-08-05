@@ -26,6 +26,12 @@ class SignupForm extends React.Component {
     this.setState({errors: nextProps.errors})
   }
 
+  demoLogin(e){
+    // e.preventDefault();
+    this.props.login({email:"demo@gmail.com",password:"123456"})
+    this.props.history.push("/");
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -108,6 +114,7 @@ class SignupForm extends React.Component {
             {this.renderErrors()}
           </div>
         </form>
+        <button className="demo-login-button" onClick={() => this.demoLogin()}>Try A Demo!</button>
       </div>
     );
   }

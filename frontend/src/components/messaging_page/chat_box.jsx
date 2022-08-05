@@ -28,12 +28,16 @@ class ChatBox extends React.Component {
     this.removeMessage = this.removeMessage.bind(this)
     this.sendMessage = this.sendMessage.bind(this)
     this.updateState = this.updateState.bind(this)
-    this.matchName = this.props.userProfiles[this.props.matchId].name
+  }
+
+  componentDidMount() {
+    const users = { user1: this.props.currentUser.id, user2: this.props.matchId};
+    this.props.fetchMessages(users);
   }
 
   componentWillUnmount() {
     this.props.clearMessages()
-    this.socket.emit('disconnect')
+    this.socket.disconnect()
   }
 
   updateState(e) {
@@ -80,7 +84,7 @@ class ChatBox extends React.Component {
   }
 
   render() {
-    if (!this.props.messages) {
+    if (this.props.userProfiles === undefined || this.props.matchId === undefined) {
       return null
     } else {
       const messages = Object.values(this.props.messages).reverse()
@@ -92,7 +96,7 @@ class ChatBox extends React.Component {
             })}
           </div>
           <div className="chatbox-textarea">
-            <textarea cols="30" rows="10" onChange={this.updateState} placeholder={`message ${this.matchName}`} value={this.state.body}></textarea>
+            <textarea cols="30" rows="10" onChange={this.updateState} placeholder="Say Something" value={this.state.body}></textarea>
             <button onClick={this.sendMessage}>Send</button>
           </div>
         </div>

@@ -22,7 +22,7 @@ const App = () => (
         <ProtectedRoute exact path="/messaging/:match_id" component={MessagingPageContainer} />
         <Route exact path="/users/:user_id" component={ShowPage} />
         <ProtectedRoute exact path="/users/:user_id/edit" component={EditPage}/>
-        <Route exact path="/" component={MainPageContainer} />
+        <ProtectedRoute exact path="/" component={MainPageContainer} />
         <Redirect to="/welcome"/>
     </Switch>
     </div>
