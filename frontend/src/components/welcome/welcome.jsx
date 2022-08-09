@@ -24,14 +24,14 @@ class Welcome extends React.Component{
                 <div className='welcome-nav-bar'>
                     <div className='left-side-nav'>
                         <img className="top-logo" src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/logo+(3).png"/>
-                        <h1 className='names-nav'>Anthonie </h1>
-                        <h1 className='names-nav'>Brian </h1>
-                        <h1 className='names-nav'>Ignacio </h1>
-                        <h1 className='names-nav'>Jacob</h1>
+                        <a target="_blank" href="https://www.linkedin.com/in/anthonie-lorsithong-551741232/"><h1 className='names-nav'>Anthonie</h1></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/ignacio-herrera-tejos-a93b80246/"><h1 className='names-nav'>Ignacio</h1></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/zlin31/"><h1 className='names-nav'>Brian</h1></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/tuesday-ai/"><h1 className='names-nav'>Jacob</h1></a>
                     </div>
                     <div className="button-holder">
                         <button className='login-button' onClick={() => this.props.history.push("/login")}>Login</button>
-                        <button className='demo-button' onClick={e =>this.demoLogin(e)}>Try as Demo</button>
+                        <button className='demo-button' onClick={e =>this.demoLogin(e)}>Try a Demo</button>
                     </div>
                 </div>
                 <div className='upper-page'>
@@ -46,7 +46,7 @@ class Welcome extends React.Component{
                                     </button>
                                 </Link>
 
-                                <a href="meet-the-devs">
+                                <a href="#meet-the-devs">
                                     <button className='get-devs'>
                                         Meet the team!
                                     </button>
@@ -67,7 +67,7 @@ class Welcome extends React.Component{
                     </div>
                 </div>
                 {/* <a id='bottom-welcome-page'> */}
-                    <div className='meet-the-devs'>
+                    <div id='meet-the-devs'>
                         <div className='dev-card anthonie'>
                             <h1 className='dev-name'>Anthonie</h1>
                             <div className='dev-info'>

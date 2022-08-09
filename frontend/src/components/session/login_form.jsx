@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
@@ -13,6 +15,7 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.redirectToWelcome = this.redirectToWelcome.bind(this);
   }
 
   // Once the user has been authenticated, redirect to the Tweets page
@@ -55,7 +58,7 @@ class LoginForm extends React.Component {
     return(
       <ul>
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
+          <li className='errors' key={`error-${i}`}>
             {this.state.errors[error]}
           </li>
         ))}
@@ -63,15 +66,22 @@ class LoginForm extends React.Component {
     );
   }
 
+  redirectToWelcome() {
+    this.props.history.push('/welcome')
+  }
+
   render() {
     return (
       <div className="signup-form-container">
-          <div>
-            <div className='form-title-with-img'>
-              <img className='title-img' src="../../../backgound_images/Products-Icon@4x.png"/>
-              <h1 className='form-title'>Lab of Love</h1>
+        <div className='login-box'>
+          <div className='signup-link'>
+            <NavLink to={'/signup'}>Signup</NavLink>
           </div>
-            <Link to={'/signup'}>Signup</Link>
+          <div>
+            <div onClick={this.redirectToWelcome} className='form-title-with-img'>
+              <img className="top-logo" src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/logo+(3).png"/>
+            </div>
+            {this.renderErrors()}
             {/* <Link to={'/login'}>Login</Link> */}
            </div>
         <form className="login-form-area" onSubmit={this.handleSubmit}>
@@ -90,9 +100,10 @@ class LoginForm extends React.Component {
               />
             <br/>
             <input className='submit-button' type="submit" value="Login!" />
-            {this.renderErrors()}
         </form>
+        <h1 className='OR'>OR</h1>
             <button className="demo-login-button" onClick={() => this.demoLogin()}>Try A Demo!</button>
+        </div>
       </div>
     );
   }

@@ -17,6 +17,7 @@ class SignupForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
+    this.redirectToWelcome = this.redirectToWelcome.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -72,6 +73,10 @@ class SignupForm extends React.Component {
    
   }
 
+  redirectToWelcome() {
+    this.props.history.push('/welcome')
+  }
+
   renderErrors() {
     return(
       <ul>
@@ -87,50 +92,49 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="signup-form-container">
-        <div>
-          <div className='form-title-with-img'>
-            <img className='title-img' src={img}/>
-            <h1 className='form-title'>Lab of Love</h1>
-          </div>
-            {/* <Link to={'/signup'}>Signup</Link> */}
+        <div className='signup-box'>
+          <div className='signup-link'>
             <Link to={'/login'}>Login</Link>
-        </div>
-        <form className="login-form-area" onSubmit={this.handleSubmit}>
-          <div className="signup-form">
-            <br/>
-              <input type="text"
-                className='form-input'
-                value={this.state.email}
-                onChange={this.update('email')}
-                placeholder="Email"
-              />
-            <br/>
-              <input type="text"
-                className='form-input'
-                value={this.state.handle}
-                onChange={this.update('handle')}
-                placeholder="Name"
-              />
-            <br/>
-              <input type="password"
-                className='form-input'
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="Password"
-              />
-            <br/>
-              <input type="password"
-                className='form-input'
-                value={this.state.password2}
-                onChange={this.update('password2')}
-                placeholder="Confirm Password"
-              />
-            <br/>
-            <input className='submit-button' type="submit" value="Sign up!" />
-            {this.renderErrors()}
           </div>
-        </form>
-        <button className="demo-login-button" onClick={() => this.demoLogin()}>Try A Demo!</button>
+          <div>
+              <div onClick={this.redirectToWelcome} className='form-title-with-img'>
+                <img className="top-logo" src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/logo+(3).png"/>
+              </div>
+              {/* <Link to={'/signup'}>Signup</Link> */}
+          </div>
+          <form className="login-form-area" onSubmit={this.handleSubmit}>
+            <div className="signup-form">
+                <input type="text"
+                  className='form-input'
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  placeholder="Email"
+                />
+                <input type="text"
+                  className='form-input'
+                  value={this.state.handle}
+                  onChange={this.update('handle')}
+                  placeholder="Name"
+                />
+                <input type="password"
+                  className='form-input'
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  placeholder="Password"
+                />
+                <input type="password"
+                  className='form-input'
+                  value={this.state.password2}
+                  onChange={this.update('password2')}
+                  placeholder="Confirm Password"
+                />
+              <input className='submit-button' type="submit" value="Sign up!" />
+              {this.renderErrors()}
+            </div>
+          </form>
+          <h1 className='OR'>OR</h1>
+          <button className="demo-login-button" onClick={() => this.demoLogin()}>Try A Demo!</button>
+        </div>
       </div>
     );
   }
