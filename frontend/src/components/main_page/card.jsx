@@ -19,8 +19,8 @@ class Card extends React.Component{
           <p>{this.props.match.name}({this.props.match.pronouns})</p>
         </header>
         <div className='info-container' value={this.props.match.user_id}>
-          <img className='card-img' src='https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png'/>
-          <div className='text-container' >
+          <img onClick={this.test} value={this.props.match.user_id} className='card-img' src='https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png'/>
+          <div onClick={this.test} value={this.props.match.user_id} className='text-container' >
             <p>Age: {this.props.match.age}</p>
             <p>Happiness Level: {this.props.match.happinessLevel}</p>
             <p>Commitment Level: {this.props.match.commitmentLevel}</p>

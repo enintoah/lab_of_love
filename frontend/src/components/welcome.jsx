@@ -69,15 +69,19 @@ class Welcome extends React.Component{
                     <div className='meet-the-devs'>
                         <div className='dev-card anthonie'>
                             <h1 className='dev-name'>Anthonie</h1>
+                            <div className='dev-info'></div>
                         </div>
                         <div className='dev-card H'>
                             <h1 className='dev-name'>Ignacio</h1>
+                            <div className='dev-info'></div>
                         </div>
                         <div className='dev-card brian'>
                             <h1 className='dev-name'>Brian</h1>
+                            <div className='dev-info'></div>
                         </div>
                         <div className='dev-card jacob'>
                             <h1 className='dev-name'>Jacob</h1>
+                            <div className='dev-info'></div>
                         </div>
                     </div>
                 {/* </a> */}
