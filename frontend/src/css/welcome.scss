@@ -30,6 +30,10 @@
     padding: 20px;
 }
 
+.get-devs:hover {
+    cursor: pointer;
+}
+
 .get-started:hover{
     cursor: pointer;
 }
@@ -70,7 +74,7 @@
     flex-direction: column;
     align-items: center;
     width: 30vw;
-    height: 50vw;
+    height: 40vw;
     margin: 20px;
     background-color: white;
     border-radius: 10px;
@@ -101,6 +105,15 @@
     margin-left: 70px;
     display: flex;
     align-items: center;
+}
+
+.left-side-nav > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.left-side-nav > a:hover {
+    text-decoration: underline;
 }
 
 .test-your-skills{
@@ -172,5 +185,36 @@
     height: 90%;
     width: 90%;
     // background-color: black;
+<<<<<<< HEAD
+    // border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dev-info a{
+    font-size: 100px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.dev-info{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.img-placeholder{
+    width: 200px;
+    height: 200px;
+    background-color: grey;
+}
+=======
     border: 1px solid lightgray;
 }
+
+html {
+    scroll-behavior: smooth;
+  }
+>>>>>>> main
