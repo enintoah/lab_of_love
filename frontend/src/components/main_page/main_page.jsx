@@ -12,8 +12,10 @@ class MainPage extends React.Component{
   }
 
   componentDidMount() {
-    this.props.getCurrentUserProfile(this.props.currentUser.id)
+    this.props.getCurrentUserProfile(this.props.currentUser.id) 
+    console.log('currentId',this.props.currentUser.id)
     this.props.getMatches(this.props.currentUser.id)
+
   }
 
   async redirectToMessaging(e) {
@@ -28,10 +30,11 @@ class MainPage extends React.Component{
       if (!this.props.matches) {
         return null
       } else {
+    
         const matches = Object.values(this.props.matches)
+        console.log('what is matches',matches)
         return (
-          <div>
-                   
+             <div>
                 <div className="nav-bar">
                      <NavBar/>
                  </div>
