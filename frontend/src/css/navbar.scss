@@ -4,20 +4,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 10vh;
+  width:auto;
+  height: 12vh;
 
-  box-shadow: 0px 8px 8px 0px rgba(96, 83, 83, 0.5);
+  box-shadow: 0px 8px 8px 0px lightgray;
   // background-color: burlywood;
 }
 
 .nav{
-  width: 80vw;
+  width: auto;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
-  gap:60rem;
+  gap:65rem;
   // border: 1px solid lightgrey;
   // background-color: black;
 }
@@ -35,7 +35,7 @@
    flex-direction: row;
    justify-content: flex-end;
    align-items: center;
-   gap:30px;
+  
    
 }
 
@@ -46,41 +46,51 @@
 .links button{
   margin-left: 15px;
 }
+
 .img-div{
-   padding-left: 17px;
+  padding:17px;
   
-  
-}
-
-.navbar-img{
-  position: relative;
-  padding: 0;
-}
-
-.img-div:hover{
  
-  cursor: pointer;
-  box-shadow: 2px 2px 2px 2px rgba(3, 6, 41, 0.2);
-}
-// .profile-div{
-//    display: flex;
-// }
-
-.profile-tag{
-  display: none;
-  position: absolute;
-  margin-top: 3px;
-  z-index: 9999;
-  font-size: 16px;
-  
-  float: left;
-  
 }
 
 .img-div:hover .profile-tag{
   display: block;
   transition: all ease 2s;
 }
+
+.profile-tag{
+  display: none;
+  position: absolute;
+  margin-top: 3px;
+  font-size: 16px;
+}
+
+.profile-name{
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   justify-content: center;
+  
+}
+
+
+.profile-name:hover{
+  cursor: pointer;
+  transition: all ease 0.1s;
+  box-shadow: 2px 2px 2px 4px rgba(3, 6, 41, 0.2);
+}
+
+.navbar-img{
+  position: relative;
+  padding: 0;
+  border-radius: 50%;
+}
+
+// .profile-div{
+//    display: flex;
+// }
+
+
 
 .lol a{
   text-decoration: none;
@@ -128,29 +138,53 @@
   color: #333;
   cursor: pointer;
   outline: 0;
-  font-size: 40px;
+  font-size: 30px;
+ 
+}
+
+.button:hover{
+   background-color: lightblue;
+   transition: all ease 0.5s;
+   border-radius: 5px 5px 5px 5px;
+   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14);
 }
 
 .menu-dropdown {
   position: absolute;
+  padding: 10px;
   top: 100%;
-  left: 0;
-  width: 300px;
-  z-index: 2;
+
+  width:100px;
+  z-index: 99;
   border: 1px solid rgba(0, 0, 0, 0.04);
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14);
+  background-color: #fff;
+  right: 15px;
+ 
 }
 
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  
 }
 li {
   padding: 8px 12px;
+  
+}
+
+.link-1{
+   text-decoration: none;
+   color:black
+}
+
+.link-2{
+   text-decoration: none;
+   color: black;
 }
 
 li:hover {
-  background-color: rgba(0, 0, 0, 0.14);
+  background-color: lightblue;
   cursor: pointer;
 }

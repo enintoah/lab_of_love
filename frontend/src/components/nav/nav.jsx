@@ -10,6 +10,7 @@ class NavBar extends React.Component{
         this.state = {
            open:false,
         };
+        this.container = React.createRef();
       }
       
   
@@ -20,14 +21,32 @@ class NavBar extends React.Component{
          }
        })
     }
+
+     handleClickOutside = (event) =>{
+        if(
+          this.container.current && 
+          !this.container.current.contains(event.target)
+        ){
+           this.setState({
+               open :false,
+             })
+        }
+     }
     
     logoutUser(e){
         e.preventDefault();
         this.props.logout()
      }
 
-    
-  
+     componentDidMount(){
+       document.addEventListener("mouseup",this.handleClickOutside)
+     }
+     
+     componentWillUnmount(){
+          document.removeEventListener("mouseup",this.handleClickOutside)
+     }
+     
+
     render() {
       const userId = this.props.currentUser.user_id;
       const name = this.props.currentUser.name
@@ -41,36 +60,34 @@ class NavBar extends React.Component{
 
               <div className='links'>
                            <div className='img-div'>
-                                <div>
-                                      <img className='navbar-img' 
-                                              onClick={()=> (this.props.history.push(`/users/${userId}`))} 
-                                              src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png">
-                                      </img>
+                                <div className='profile-name'>
+                                      <div>
+                                            <img className='navbar-img' 
+                                                    onClick={()=> (this.props.history.push(`/users/${userId}`))} 
+                                                    src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png">
+                                            </img>
+                                      </div>
+                                  
+                                      <div>
+                                            <h3>{name}</h3>
+                                      </div>    
+                                  </div>
+
+                                  <div className='profile-tag'>
+                                    my profile
                                 </div>
-                             
-                                <div>
-                                      <h3>{name}</h3>
-                                </div>    
-
-                                <div className='profile-tag'>
-                                  my profile
-                               </div>
-
-                      
-
                           </div>
                         
-                           <div className='menu'>
+                           <div className='menu' ref={this.container}>
                               <button type="button" class="button" onClick={this.handleButtonClick}>
                                 ☰
                               </button>
                               {this.state.open && (
                                   <div className='menu-dropdown'>
-
                                       <ul>
-                                        <li > <Link to={`/messaging/62e037d34780df32d1a79921`}> messages</Link></li>
-                                        <li > <Link to={`/users/${userId}/edit`}> edit profile</Link></li>
-                                        <li> <button onClick={this.logoutUser}>Logout</button></li>
+                                        <li > <Link to={`/messaging/62e037d34780df32d1a79921`} className='link-1'> messages</Link></li>
+                                        <li > <Link to={`/users/${userId}/edit`} className='link-2'> edit profile</Link></li>
+                                        <li onClick={this.logoutUser}> log out</li>
                                       </ul>
 
                                   </div>
