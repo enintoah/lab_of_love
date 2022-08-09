@@ -173,4 +173,26 @@
     width: 90%;
     // background-color: black;
     border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dev-info a{
+    font-size: 100px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.dev-info{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.img-placeholder{
+    width: 200px;
+    height: 200px;
+    background-color: grey;
 }
