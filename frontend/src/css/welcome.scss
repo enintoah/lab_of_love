@@ -74,7 +74,7 @@
     flex-direction: column;
     align-items: center;
     width: 30vw;
-    height: 50vw;
+    height: 40vw;
     margin: 20px;
     background-color: white;
     border-radius: 10px;
@@ -185,9 +185,36 @@
     height: 90%;
     width: 90%;
     // background-color: black;
+<<<<<<< HEAD
+    // border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dev-info a{
+    font-size: 100px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.dev-info{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.img-placeholder{
+    width: 200px;
+    height: 200px;
+    background-color: grey;
+}
+=======
     border: 1px solid lightgray;
 }
 
 html {
     scroll-behavior: smooth;
   }
+>>>>>>> main
