@@ -66,11 +66,13 @@ class NavBar extends React.Component{
                               </button>
                               {this.state.open && (
                                   <div className='menu-dropdown'>
+
                                       <ul>
                                         <li > <Link to={`/messaging/62e037d34780df32d1a79921`}> messages</Link></li>
                                         <li > <Link to={`/users/${userId}/edit`}> edit profile</Link></li>
                                         <li> <button onClick={this.logoutUser}>Logout</button></li>
                                       </ul>
+
                                   </div>
                                 )}
                           </div>

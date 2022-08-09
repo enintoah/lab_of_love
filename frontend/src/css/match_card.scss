@@ -13,6 +13,13 @@
   flex-direction: column;
   align-items: center;
   padding: 10px;
+  box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.4);
+  border-radius: 3%;
+  background-color: #fff;
+}
+
+.matchsp-name{
+  font-weight: bold;
 }
 
 .matchsp-img-container img{
@@ -37,9 +44,10 @@
 }
 
 .matchsp p{
-  border: 1px solid black;
+  // border: 1px solid black;
   width: 30px;
   height: 30px;
+  padding: 5px;
 }
 
 .matchsp-power-levels{
@@ -51,7 +59,12 @@
   border: 1px solid black;
   height: 100px;
   overflow-y: scroll;
+  width: 400px;
 }
+
+// .matchsp-desc-container{
+//   width: 200px;
+// }
 
 .interests-m{
   display: flex;
@@ -59,11 +72,12 @@
 
 .interests-m p{
   font-weight: lighter;
-  border: 1px solid black;
+  // border: 1px solid black;
   margin-left: 30px;
   margin-right: 30px;
   margin-top: 10px;
   margin-bottom: 10px;
+  padding: 5px;
 }
 
 .ttle{
@@ -76,11 +90,12 @@
 
 .traits p{
   font-weight: lighter;
-  border: 1px solid black;
+  // border: 1px solid black;
   margin-left: 30px;
   margin-right: 30px;
   margin-top: 10px;
   margin-bottom: 10px;
+  padding: 5px;
 }
 
 .matchsp-ll{
@@ -89,9 +104,29 @@
 
 .matchsp-ll p{
   font-weight: lighter;
-  border: 1px solid black;
+  // border: 1px solid black;
   margin-left: 30px;
   margin-right: 30px;
   margin-top: 10px;
   margin-bottom: 10px;
+  padding: 5px
+}
+
+.match-card section{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://pbs.twimg.com/media/ExaTwqqWQAM6s9m?format=jpg&name=large');
+  // width: 45vw;
+}
+
+.messages-nav{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.matchi{
+  border-bottom: 0.5px solid lightgray;
 }
