@@ -30,6 +30,10 @@
     padding: 20px;
 }
 
+.get-devs:hover {
+    cursor: pointer;
+}
+
 .get-started:hover{
     cursor: pointer;
 }
@@ -103,6 +107,15 @@
     align-items: center;
 }
 
+.left-side-nav > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.left-side-nav > a:hover {
+    text-decoration: underline;
+}
+
 .test-your-skills{
     margin-top: 40px;
     margin-left: 100px;
@@ -174,3 +187,7 @@
     // background-color: black;
     border: 1px solid lightgray;
 }
+
+html {
+    scroll-behavior: smooth;
+  }
