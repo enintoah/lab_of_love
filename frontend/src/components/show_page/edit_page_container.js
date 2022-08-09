@@ -1,6 +1,7 @@
 import {connect} from 'react-redux'
 import { editUserProfile } from '../../actions/user_profile_actions'
 import Edit from './edit_page'
+import { getCurrentUserProfile } from '../../actions/user_profile_actions'
 
 const mapStateToProps = (state)=> {
 return {
@@ -12,7 +13,8 @@ return {
 
 const mapDispatchToProps = dispatch =>{
    return {
-    editUserProfile: profile => dispatch(editUserProfile(profile))
+    editUserProfile: profile => dispatch(editUserProfile(profile)),
+    getCurrentUserProfile: (id) => dispatch(getCurrentUserProfile(id))
    }
 }
 
