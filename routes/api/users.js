@@ -103,6 +103,7 @@ router.post('/findByEmail', (req, res) => {
 router.get('/:id', (req, res) => {
   User.findOne({_id: req.params.id }).then(user => {
       const matches = user.matches
+      console.log('this is the matches fatass',matches)
       return res.json(matches)
     })
     .catch(err => {return res.status(400).json(err)})

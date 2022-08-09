@@ -7,13 +7,25 @@ class NavBar extends React.Component{
     constructor(props){
         super(props);
         this.logoutUser = this.logoutUser.bind(this);
-    
+        this.state = {
+           open:false,
+        };
+      }
+      
+  
+      handleButtonClick = () =>{
+        this.setState((state) =>{
+         return {
+            open: !state.open,
+         }
+       })
     }
     
     logoutUser(e){
         e.preventDefault();
         this.props.logout()
      }
+
     
   
     render() {
@@ -25,12 +37,9 @@ class NavBar extends React.Component{
 
                       <div className='lol'>
                         <a href="/"><img src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/logo+(3).png"/></a>
-              </div>
+                     </div>
 
               <div className='links'>
-
-                           
-                    
                            <div className='img-div'>
                                 <div>
                                       <img className='navbar-img' 
@@ -52,13 +61,19 @@ class NavBar extends React.Component{
                           </div>
                         
                            <div className='menu'>
-                           
+                              <button type="button" class="button" onClick={this.handleButtonClick}>
+                                ☰
+                              </button>
+                              {this.state.open && (
                                   <div className='menu-dropdown'>
-                                      <button > <Link to={`/messaging/62e037d34780df32d1a79921`}> messages</Link></button>
-                                      <button > <Link to={`/users/${userId}/edit`}> edit profile</Link></button>
-                                      <button onClick={this.logoutUser}>Logout</button>
+                                      <ul>
+                                        <li > <Link to={`/messaging/62e037d34780df32d1a79921`}> messages</Link></li>
+                                        <li > <Link to={`/users/${userId}/edit`}> edit profile</Link></li>
+                                        <li> <button onClick={this.logoutUser}>Logout</button></li>
+                                      </ul>
                                   </div>
-                            </div>
+                                )}
+                          </div>
                     </div>
              </div>
          );
