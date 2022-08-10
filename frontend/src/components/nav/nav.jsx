@@ -50,6 +50,7 @@ class NavBar extends React.Component{
     render() {
       const userId = this.props.currentUser.user_id;
       const name = this.props.currentUser.name
+      console.log('link history',this.props.history)
       if(this.props.loggedIn){
          return(
               <div className='nav'>
@@ -59,14 +60,14 @@ class NavBar extends React.Component{
                      </div>
 
               <div className='links'>
+                        {(this.props.history.location.pathname.includes('users') && !this.props.history.location.pathname.includes('edit'))?'':
                            <div className='img-div'>
                                 <div className='profile-name'>
-                                      <div>
-                                            <img className='navbar-img' 
-                                                    onClick={()=> (this.props.history.push(`/users/${userId}`))} 
-                                                    src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png">
-                                            </img>
-                                      </div>
+                                      <div><img className='navbar-img' 
+                                            onClick={()=> (this.props.history.push(`/users/${userId}`))} 
+                                            src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png">
+                                       </img></div>
+                                      
                                   
                                       {/* <div>
                                             <h3>{name}</h3>
@@ -76,7 +77,8 @@ class NavBar extends React.Component{
                                   <div className='profile-tag'>
                                     my profile
                                 </div>
-                          </div>
+                           </div>
+                                }
                         
                            <div className='menu' ref={this.container}>
                               <button type="button" class="button" onClick={this.handleButtonClick}>
@@ -88,8 +90,8 @@ class NavBar extends React.Component{
                               {this.state.open && (
                                   <div className='menu-dropdown'>
                                       <ul>
-                                        <li > <Link to={`/`} className='link-1'> matches</Link></li>
-                                        <li > <Link to={`/users/${userId}/edit`} className='link-2'> edit profile</Link></li>
+                                       { (this.props.history.location.pathname === '/') ? '':<li > <Link to={`/`} className='link-1'> matches</Link></li>}
+                                        {(this.props.history.location.pathname.includes('edit'))? '':<li > <Link to={`/users/${userId}/edit`} className='link-2'> edit profile</Link></li>}
                                         <li onClick={this.logoutUser}> log out</li>
                                       </ul>
 

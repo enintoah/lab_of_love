@@ -139,7 +139,6 @@ router.get('/workaround/:id', (req, res) => {
         location:"New York",
         commitmentLevel:60,
         pronouns:"she/her",
-          
        },
        { 
         user_id: '62f2ee17f15631836f6b5b50',
