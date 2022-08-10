@@ -69,16 +69,19 @@ class NavBar extends React.Component{
                                        </img></div>
                                       
                                   
-                                      {/* <div>
-                                            <h3>{name}</h3>
-                                      </div>     */}
+                                     
                                   </div>
+                                 
 
                                   <div className='profile-tag'>
                                     my profile
                                 </div>
-                           </div>
+                          </div>
                                 }
+
+                                  {/* <div className='nav-name'>
+                                     <h5>{name}</h5>
+                                  </div>     */}
                         
                            <div className='menu' ref={this.container}>
                               <button type="button" class="button" onClick={this.handleButtonClick}>
