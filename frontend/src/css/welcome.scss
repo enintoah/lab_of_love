@@ -63,9 +63,11 @@
     background-color: rgb(255, 255, 255);
 }
 
-.meet-the-devs{
+#meet-the-devs{
     height: 100vh;
+    // width: 100vw;
     display: flex;
+    flex-direction: row;
     background-color: cornflowerblue;
 }
 
@@ -73,7 +75,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30vw;
+    width: 25vw;
     height: 40vw;
     margin: 20px;
     background-color: white;
@@ -172,20 +174,12 @@
 .words{
     margin-bottom: 200px;
 }
-// .meet-the-devs{
-//     height: 100vh;
-//     background-color: #07a2a0;
-// }
 
-// .big-div{
-//     overflow-y: scroll;
-// }
 
 .dev-info{
     height: 90%;
     width: 90%;
     // background-color: black;
-<<<<<<< HEAD
     // border: 1px solid lightgray;
     display: flex;
     flex-direction: column;
@@ -210,11 +204,14 @@
     height: 200px;
     background-color: grey;
 }
-=======
-    border: 1px solid lightgray;
-}
+
 
 html {
     scroll-behavior: smooth;
   }
->>>>>>> main
+
+.big-div{
+    display: flex;
+    flex-direction: column;
+}
+
