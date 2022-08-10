@@ -71,8 +71,8 @@ class Welcome extends React.Component{
                         <div className='dev-card anthonie'>
                             <h1 className='dev-name'>Anthonie</h1>
                             <div className='dev-info'>
-                                <div className='img-placeholder'></div>
                                 <p>Team Leader</p>
+                                <div className='img-placeholder'></div>
                                 <a target="_blank" href="https://github.com/enintoah" class="fa-brands fa-github"></a>
                                 <a target="_blank" href="https://www.linkedin.com/in/anthonie-lorsithong-551741232/" class="fa-brands fa-linkedin-in"></a>
                             </div>
@@ -80,8 +80,8 @@ class Welcome extends React.Component{
                         <div className='dev-card H'>
                             <h1 className='dev-name'>Ignacio</h1>
                             <div className='dev-info'>
-                                <div className='img-placeholder'></div>
                                 <p>Backend Designer</p>
+                                <div className='img-placeholder'></div>
                                 <a target="_blank" href="https://github.com/hherreratejos" class="fa-brands fa-github"></a>
                                 <a target="_blank" href="https://www.linkedin.com/in/ignacio-herrera-tejos-a93b80246/" class="fa-brands fa-linkedin-in"></a>
                             </div>
@@ -89,8 +89,8 @@ class Welcome extends React.Component{
                         <div className='dev-card brian'>
                             <h1 className='dev-name'>Brian</h1>
                             <div className='dev-info'>
-                                <div className='img-placeholder'></div>
                                 <p>Frontend Lead</p>
+                                <div className='img-placeholder'></div>
                                 <a target="_blank" href="https://github.com/Opengundumstyle" class="fa-brands fa-github"></a>
                                 <a target="_blank" href="https://www.linkedin.com/in/zlin31/" class="fa-brands fa-linkedin-in"></a>
                             </div>
@@ -98,8 +98,8 @@ class Welcome extends React.Component{
                         <div className='dev-card jacob'>
                             <h1 className='dev-name'>Jacob</h1>
                             <div className='dev-info'>
-                                <div className='img-placeholder'></div>
                                 <p>UI/UX Design</p>
+                                <div className='img-placeholder'></div>
                                 <a target="_blank" href="https://github.com/Jablob44" class="fa-brands fa-github"></a>
                                 <a target="_blank" href="https://www.linkedin.com/in/tuesday-ai/" class="fa-brands fa-linkedin-in"></a>
                             </div>

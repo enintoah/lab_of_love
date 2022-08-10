@@ -19,3 +19,7 @@ export const login = (userData) => {
 export const findUserProfilebyEmail = (userData) => {
   return axios.post('/api/users/findByEmail', userData)
 }
+
+export const workaroundNewUser = (id) => {
+  return axios.get(`/api/users/workaround/${id}`)
+}

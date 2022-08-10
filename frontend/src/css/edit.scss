@@ -1,6 +1,12 @@
 .mph1{
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 20px;
 }
 
 .edit-navbar{
@@ -26,7 +32,9 @@
   width: auto;
   padding-right: 15px;
   padding-left: 15px;
-  background-color: rgb(145, 145, 145);}
+  // background-color: rgb(145, 145, 145);}
+  // background-image: url('https://pbs.twimg.com/media/ExaTwqqWQAM6s9m?format=jpg&name=large');
+}
 
 .edit-form form{
   display: flex;
@@ -37,12 +45,13 @@
 
 .edit-form form label{
   background-color: #fff;
+  border-radius: 4px;
 }
 
 .edit-navbar{
   display: flex;
   justify-content: center;
-  width: 100vw;
+  width: 98vw;
 }
 
 .edit-navbar > div{
@@ -148,6 +157,7 @@
   padding: 15px;
   width: 1000px;
   background-color: #fff;
+  border-radius: 4px;
 }
 
 .commitment input{
@@ -165,6 +175,7 @@
   padding: 15px;
   width: 1000px;
   background-color: #fff;
+  border-radius: 4px;
 }
 
 .happiness input{
