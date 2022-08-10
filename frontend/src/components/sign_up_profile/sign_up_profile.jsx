@@ -19,12 +19,12 @@ class CreateProfile extends React.Component{
           personality1:'',
           personality2:'',
           personality3:'',
-          loveLanguage: '',
+          loveLanguage: 'n/a',
           imageUrl:'https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png',
           happinessLevel:50,
           location:'',
           commitmentLevel:50,
-          pronouns:'',
+          pronouns:'n/a',
            }
           this.handleSubmit = this.handleSubmit.bind(this)
           this.findId = this.findId.bind(this)
