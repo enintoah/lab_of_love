@@ -130,7 +130,7 @@ class CreateProfile extends React.Component{
                       <br />
              
                     <label className="create-pronouns">Pronouns:<br />
-                                <select onChange={this.update('pronouns')} name="pronouns" value={this.state.pronouns}>
+                                <select onChange={this.update('pronouns')} name="pronouns" value='{this.state.pronouns}'>
                                     <option value="he/him">he/him</option>
                                     <option value="she/her">she/her</option>
                                     <option value="ze/hir">ze/hir</option>

@@ -15,9 +15,9 @@ class Card extends React.Component{
   render(){
     return(
       <div className='card' onClick={this.test} value={this.props.match.user_id}>
-        <header>
+        <div className='header' onClick={this.test} value={this.props.match.user_id}>
           <p>{this.props.match.name}({this.props.match.pronouns})</p>
-        </header>
+        </div>
         <div className='info-container' value={this.props.match.user_id}>
           <img onClick={this.test} value={this.props.match.user_id} className='card-img' src='https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png'/>
           <div onClick={this.test} value={this.props.match.user_id} className='text-container' >

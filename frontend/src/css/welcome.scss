@@ -68,6 +68,7 @@
     // width: 100vw;
     display: flex;
     flex-direction: row;
+    align-items: center;
     background-color: cornflowerblue;
 }
 
@@ -201,9 +202,18 @@
 
 .img-placeholder{
     width: 200px;
-    height: 200px;
-    background-color: grey;
+    height: 200px;  
+    background-color: gray;  
 }
+
+.img-placeholder img{
+    max-width: 100%;
+    max-height: 100%;
+}
+// .anthonie{
+//     background-image: url('https://lacks-aa-dev.s3.us-west-1.amazonaws.com/anthonie.jpg');
+// }
+
 
 
 html {
