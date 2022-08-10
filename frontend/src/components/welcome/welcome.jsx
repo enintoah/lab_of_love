@@ -68,16 +68,18 @@ class Welcome extends React.Component{
                 </div>
                 {/* <a id='bottom-welcome-page'> */}
                     <div id='meet-the-devs'>
-                        <div className='dev-card anthonie'>
+                        <div className='dev-card'>
                             <h1 className='dev-name'>Anthonie</h1>
                             <div className='dev-info'>
                                 <p>Team Leader</p>
-                                <div className='img-placeholder'></div>
+                                <div className='img-placeholder anthonie'>
+                                    <img src='https://lacks-aa-dev.s3.us-west-1.amazonaws.com/anthonie.jpg'/>
+                                </div>
                                 <a target="_blank" href="https://github.com/enintoah" class="fa-brands fa-github"></a>
                                 <a target="_blank" href="https://www.linkedin.com/in/anthonie-lorsithong-551741232/" class="fa-brands fa-linkedin-in"></a>
                             </div>
                         </div>
-                        <div className='dev-card H'>
+                        <div className='dev-card'>
                             <h1 className='dev-name'>Ignacio</h1>
                             <div className='dev-info'>
                                 <p>Backend Designer</p>
@@ -86,16 +88,18 @@ class Welcome extends React.Component{
                                 <a target="_blank" href="https://www.linkedin.com/in/ignacio-herrera-tejos-a93b80246/" class="fa-brands fa-linkedin-in"></a>
                             </div>
                         </div>
-                        <div className='dev-card brian'>
+                        <div className='dev-card'>
                             <h1 className='dev-name'>Brian</h1>
                             <div className='dev-info'>
                                 <p>Frontend Lead</p>
-                                <div className='img-placeholder'></div>
+                                <div className='img-placeholder'>
+                                    <img src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/1590978917766.jpeg"/>
+                                </div>
                                 <a target="_blank" href="https://github.com/Opengundumstyle" class="fa-brands fa-github"></a>
                                 <a target="_blank" href="https://www.linkedin.com/in/zlin31/" class="fa-brands fa-linkedin-in"></a>
                             </div>
                         </div>
-                        <div className='dev-card jacob'>
+                        <div className='dev-card'>
                             <h1 className='dev-name'>Jacob</h1>
                             <div className='dev-info'>
                                 <p>UI/UX Design</p>

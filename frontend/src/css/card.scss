@@ -1,18 +1,13 @@
 *{
   font-size: 1rem;
-  // overflow-y: auto;
 }
 
 .cards-container{
   display: flex;
-  height: 89vh;
+  height: 80vh;
   align-items: center;
-  // background-color: burlywood;
   overflow-x: scroll;
   overflow-y: auto;
-  // overflow: auto;
-  // justify-content: stretch;
-  // background-color: brown;
 }
 
 .card-img{
@@ -22,7 +17,7 @@
 }
 
 .card{
-  height: 80%;
+  height: 90%;
   aspect-ratio: 5/8;
   display: flex;
   flex-direction: column;
@@ -32,7 +27,6 @@
   margin-left: 8px;
   margin-right: 8px;
   cursor: pointer;
-  // background: hsl(35, 50%, 50%);
 }
 
 .card:hover, .card:focus{
@@ -48,18 +42,22 @@
   margin-bottom: 10%;
 }
 
-.card header{
+.card .header{
   width: 100%;
   height: 70%;
   display: flex;
   justify-content: center;
   justify-items: center;
+  align-items: center;
+  align-content: center;
 }
 
-.card header p{
+.card .header p{
   display: flex;
   justify-items: center;
   justify-content: center;
+  align-items: center;
+  align-content: center;
   height: 70%;
   width: 100%;
   font-weight: bold;
