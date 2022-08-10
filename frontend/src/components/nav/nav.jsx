@@ -68,9 +68,9 @@ class NavBar extends React.Component{
                                             </img>
                                       </div>
                                   
-                                      <div>
+                                      {/* <div>
                                             <h3>{name}</h3>
-                                      </div>    
+                                      </div>     */}
                                   </div>
 
                                   <div className='profile-tag'>
@@ -81,11 +81,14 @@ class NavBar extends React.Component{
                            <div className='menu' ref={this.container}>
                               <button type="button" class="button" onClick={this.handleButtonClick}>
                                 ☰
+                                    <div className='menu-tag'>
+                                        <p>lab menu</p> 
+                                    </div>
                               </button>
                               {this.state.open && (
                                   <div className='menu-dropdown'>
                                       <ul>
-                                        <li > <Link to={`/messaging/62e037d34780df32d1a79921`} className='link-1'> messages</Link></li>
+                                        <li > <Link to={`/`} className='link-1'> matches</Link></li>
                                         <li > <Link to={`/users/${userId}/edit`} className='link-2'> edit profile</Link></li>
                                         <li onClick={this.logoutUser}> log out</li>
                                       </ul>

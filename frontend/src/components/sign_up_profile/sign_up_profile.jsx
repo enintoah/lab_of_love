@@ -1,6 +1,6 @@
 import React from 'react'
 import { findUserProfilebyEmail } from '../../util/session_api_util';
-
+import { workaroundNewUser } from '../../util/session_api_util';
 
 class CreateProfile extends React.Component{
       
@@ -33,6 +33,10 @@ class CreateProfile extends React.Component{
 
      findId() {
         return findUserProfilebyEmail({email: this.props.currentUser.email})
+     }
+
+     componentDidMount() {
+        this.findId().then(res => workaroundNewUser(res.data._id))
      }
 
    handleSubmit(e){

@@ -28,7 +28,6 @@ router.post("/register", (req, res) => {
   User.findOne({ handle: req.body.handle }).then(user => { 
     if (user) {
       errors.handle = "User already exists";
-      console.log("THIS SHIT EXISTS")
       return res.status(400).json(errors);
     } else {
       const newUser = new User({
@@ -109,6 +108,88 @@ router.get('/:id', (req, res) => {
     .catch(err => {return res.status(400).json(err)})
   }
 )
+
+router.get('/workaround/:id', (req, res) => {
+  User.findOne({_id: req.params.id}).then(user => {
+    const matches = user.matches.concat([
+      { user_id: '62f2ec5fa73c7fb7b92f2623',
+        name:'Ariana Grande',
+        description:"Thank you, next.",
+        interests:["singing","making music","fashion"],
+        age:29,
+        gender:"female",
+        personality:["fun","deep","playful"],
+        loveLanguage:"Touch",
+        imageUrl:'https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png',
+        happinessLevel:90,
+        location:"Los Angeles",
+        commitmentLevel:70,
+        pronouns:"she/her",
+       },
+       { user_id: '62f2eddbf15631836f6b5b46',
+        name:'Megan Fox',
+        description:'MGK FOR LIFE',
+        interests:["transformers","music","the beach"],
+        age:36,
+        gender:"female",
+        personality:["thinker","cats","traveling"],
+        loveLanguage:"Receiving Gifts",
+        imageUrl:'https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png',
+        happinessLevel:30,
+        location:"New York",
+        commitmentLevel:60,
+        pronouns:"she/her",
+          
+       },
+       { 
+        user_id: '62f2ee17f15631836f6b5b50',
+        name:'Kim Kardashian',
+        description:"sad life",
+        interests:["business","fashion","dating pete davidson"],
+        age:41,
+        gender:"female",
+        personality:["outgoing","fun","passionate"],
+        loveLanguage: "Words of Affirmation",
+        imageUrl:'https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png',
+        happinessLevel:80,
+        location:"Los Angeles",
+        commitmentLevel:85,
+        pronouns:"she/her",
+       },
+       { user_id: '62f2ee37f15631836f6b5b5a',
+        name:'Taylor Swift',
+        description:"Love story, baby just say yes.",
+        interests:["filming tiktok","traveling","making music"],
+        age:32,
+        gender:"female",
+        personality:["Introvert","Fun","Feeling",],
+        loveLanguage:"touch",
+        imageUrl:'https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png',
+        happinessLevel:95,
+        location:"Los Angeles",
+        commitmentLevel:35,
+        pronouns:"she/her",
+       },
+       { user_id: '62f2ee56f15631836f6b5b60',
+        name:'Selena Gomez',
+        description: "I do find that I'm drawn to people in my life, romantically or not, that have something to teach me.",
+        interests: ["acting","making music","acting again"],
+        age: 33,
+        gender: "female",
+        personality: ["fun","funny","fashionable"],
+        loveLanguage: "Quality Time",
+        imageUrl: 'https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png',
+        happinessLevel: 87,
+        location: "Los Angeles",
+        commitmentLevel: 78,
+        pronouns: "she/her",
+       }
+    ]);
+    user.matches = matches;
+    user.save()
+    return res.json(user)
+  })
+})
 
 
 module.exports = router;
