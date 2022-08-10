@@ -6,7 +6,8 @@ import { fetchMessages } from '../../actions/message_actions';
 const mapStateToProps = (state) => {
   return {
     currentUser: state.session.user,
-    matches: state.entities.userProfiles
+    matches: state.entities.userProfiles,
+    currentUserProfile: state.entities.currentUserProfile
   }
 };
 

@@ -1,8 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-// import Navbar from  '../nav/nav_container'
 import { Link,Redirect } from 'react-router-dom';
-import img from "./Products-Icon@4x.png"
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -65,8 +63,9 @@ class SignupForm extends React.Component {
     console.log('this is loginUSer',loginUser)
 
     this.props.signup(user)
-    .then(() => this.props.history.push(`/users/${user.handle}/createProfile`))
-  //  .then((loginUser) => this.props.login(loginUser))
+      .then(res => this.props.login(res.user))
+    //  .then((loginUser) => this.props.login(loginUser))
+    // .then(() => this.props.history.push(`/users/${user.handle}/createProfile`))
 
       // .then(this.props.login(loginUser)
       //   .then(this.props.history.push(`/users/${user.handle}/createProfile`)))
