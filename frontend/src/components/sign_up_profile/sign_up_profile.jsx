@@ -1,6 +1,4 @@
 import React from 'react'
-import { findUserProfilebyEmail } from '../../util/session_api_util';
-import { workaroundNewUser } from '../../util/session_api_util';
 
 class CreateProfile extends React.Component{
       
@@ -8,7 +6,7 @@ class CreateProfile extends React.Component{
         super(props);
 
         this.state = {
-          user_id:null,
+          user_id: this.props.match.params.user_id,
           name:'',
           description:'',
           interests1:'',
@@ -26,35 +24,17 @@ class CreateProfile extends React.Component{
           commitmentLevel:50,
           pronouns:'n/a',
            }
+
           this.handleSubmit = this.handleSubmit.bind(this)
-          this.findId = this.findId.bind(this)
-          this.findId().then(res => this.setState({user_id: res.data._id}))
-     }
-
-     findId() {
-        return findUserProfilebyEmail({email: this.props.currentUser.email})
-     }
-
-     componentDidMount() {
-        this.findId().then(res => workaroundNewUser(res.data._id))
      }
 
    handleSubmit(e){
      e.preventDefault()
-    
-     let user = {
-      email: this.props.currentUser.email,
-      password: this.props.currentUser.password
-    };
-
-    console.log('i am the user:',user)
    
      let newState = Object.assign({},this.state)
         console.log('final state',this.state)
      this.props.createSignInProfile(newState)
-      .then(this.props.login(user))
         .then(this.props.history.push('/'))
-    //  this.props.login(user).then(this.props.history.push('/'))
    }
 
   update(property){
@@ -86,13 +66,7 @@ class CreateProfile extends React.Component{
 
   render(){
 
-    let id ;
-    this.findId().then(res => {
-    //  console.log('res.data',res.data)
-      id = res.data._id
-    })
-    console.log(id)
-    // console.log('what is the state',this.state)
+    let id = this.props.match.params.user_id
 
      return(
         <div className='create-form'>

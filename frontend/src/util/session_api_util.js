@@ -23,3 +23,7 @@ export const findUserProfilebyEmail = (userData) => {
 export const workaroundNewUser = (id) => {
   return axios.get(`/api/users/workaround/${id}`)
 }
+
+export const deleteUser = (id) => {
+  return axios.delete(`/api/users/${id}`)
+}

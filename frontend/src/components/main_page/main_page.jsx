@@ -19,7 +19,7 @@ class MainPage extends React.Component{
 
   checkForNewUserProfile() {
     if (Object.keys(this.props.currentUserProfile).length === 0) {
-      console.log('hello wolrd bitches')
+      this.props.history.push(`/users/${this.props.currentUser.id}/createProfile`)
     }
   }
 

@@ -16,17 +16,17 @@ class Card extends React.Component{
     return(
       <div className='card' onClick={this.test} value={this.props.match.user_id}>
         <div className='header' onClick={this.test} value={this.props.match.user_id}>
-          <p>{this.props.match.name}({this.props.match.pronouns})</p>
+          <p value={this.props.match.user_id} >{this.props.match.name}({this.props.match.pronouns})</p>
         </div>
         <div className='info-container' value={this.props.match.user_id}>
           <img onClick={this.test} value={this.props.match.user_id} className='card-img' src='https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png'/>
           <div onClick={this.test} value={this.props.match.user_id} className='text-container' >
-            <p>Age: {this.props.match.age}</p>
-            <p>Happiness Level: {this.props.match.happinessLevel}</p>
-            <p>Commitment Level: {this.props.match.commitmentLevel}</p>
-            <p style={{fontWeight: 'bold'}}>Personality: <ul style={{fontWeight: 'lighter'}}>{this.props.match.personality.map(el => {
+            <p value={this.props.match.user_id} >Age: {this.props.match.age}</p>
+            <p value={this.props.match.user_id} >Happiness Level: {this.props.match.happinessLevel}</p>
+            <p value={this.props.match.user_id} >Commitment Level: {this.props.match.commitmentLevel}</p>
+            <p value={this.props.match.user_id} style={{fontWeight: 'bold'}}>Personality: <ul value={this.props.match.user_id} style={{fontWeight: 'lighter'}}>{this.props.match.personality.map(el => {
               return(
-                <li>-{el}</li>            
+                <li value={this.props.match.user_id}>-{el}</li>            
                 )
             })}</ul></p>
           </div>

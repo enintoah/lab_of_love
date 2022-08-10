@@ -69,9 +69,9 @@ class Welcome extends React.Component{
                 {/* <a id='bottom-welcome-page'> */}
                     <div id='meet-the-devs'>
                         <div className='dev-card'>
-                            <h1 className='dev-name'>Anthonie</h1>
+                            <h1 className='dev-name'>Anthonie Lorsithong</h1>
                             <div className='dev-info'>
-                                <p>Team Leader</p>
+                                <p>Team Lead</p>
                                 <div className='img-placeholder anthonie'>
                                     <img src='https://lacks-aa-dev.s3.us-west-1.amazonaws.com/anthonie.jpg'/>
                                 </div>
@@ -80,7 +80,7 @@ class Welcome extends React.Component{
                             </div>
                         </div>
                         <div className='dev-card'>
-                            <h1 className='dev-name'>Ignacio</h1>
+                            <h1 className='dev-name'>Ignacio Herrera</h1>
                             <div className='dev-info'>
                                 <p>Backend Designer</p>
                                 <div className='img-placeholder'></div>
@@ -89,7 +89,7 @@ class Welcome extends React.Component{
                             </div>
                         </div>
                         <div className='dev-card'>
-                            <h1 className='dev-name'>Brian</h1>
+                            <h1 className='dev-name'>Brian Lin</h1>
                             <div className='dev-info'>
                                 <p>Frontend Lead</p>
                                 <div className='img-placeholder'>
@@ -100,7 +100,7 @@ class Welcome extends React.Component{
                             </div>
                         </div>
                         <div className='dev-card'>
-                            <h1 className='dev-name'>Jacob</h1>
+                            <h1 className='dev-name'>Jacob Justice</h1>
                             <div className='dev-info'>
                                 <p>UI/UX Design</p>
                                 <div className='img-placeholder'></div>

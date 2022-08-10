@@ -16,3 +16,7 @@ export const createUserProfile = (profile) => {
     console.log("this is the profile in the createUserProfile util function: ", profile)
     return axios.post(`/api/user_profile/`, profile)
 }
+
+export const deleteUserProfile = (id) => {
+  return axios.delete(`/api/user_profile/${id}`)
+}

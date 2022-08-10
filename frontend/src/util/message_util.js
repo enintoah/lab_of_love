@@ -15,3 +15,7 @@ export const deleteMessage = (id) => {
 export const updateMessage = (id, data) => {
   return axios.patch(`/api/messages/${id}`, data)
 }
+
+export const deleteManyMessages = (id) => {
+  return axios.delete(`/api/messages/profileDelete/${id}`)
+}

@@ -35,6 +35,12 @@ router.post('/create', (req, res) => {
     })
 })
 
+router.delete('/profileDelete/:user_id', (req, res) => {
+  Message.deleteMany({$or: [{recipient: req.params.user_id}, {sender: req.params.user_id}]})
+    .then(() => res.json("Success!"))
+    .catch((err) => res.status(400).json(err))
+})
+
 router.delete('/:message_id', (req, res) => {
   Message.findOneAndDelete({ _id: req.params.message_id }).then(message => {
     return res.json(message);

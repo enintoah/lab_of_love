@@ -11,11 +11,6 @@ router.get('/by_email', (req, res) => {
   User.findOne
 })
 
-// for getting every persons date for the week. 
-// router.get('/', (req, res) => {
-
-// })
-
 router.get('/:user_id', (req, res) => {
   console.log("this is the fucking id why wont you work: ", req.params.user_id)
   UserProfile.findOne({ user_id: req.params.user_id }).then(profile => {
