@@ -48,9 +48,6 @@ class MainPage extends React.Component{
                     })
                   }
                  </div>
-               
-             
-
             <footer>
               Copyright &copy; 2022 Lab
             </footer>
