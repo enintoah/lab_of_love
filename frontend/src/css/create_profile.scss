@@ -1,0 +1,127 @@
+.create-form{
+  background-image: url('https://pbs.twimg.com/media/ExaTwqqWQAM6s9m?format=jpg&name=large');
+}
+
+.create-form form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-form .create-name{
+  background: none;
+}
+.create-name{
+    font-size: 20px;
+    font-weight: bold;
+    color:whitesmoke;
+}
+textarea{
+  resize:none;
+  width:400px;
+  z-index:44;
+  opacity: 0.8;
+  border-radius:15px 15px 15px 15px
+}
+input{
+    opacity: 0.8;
+    border-radius:12px 12px 12px 12px;
+    text-align: center;
+}
+select{
+    opacity: 0.8;
+    border-radius:12px 12px 12px 12px
+}
+.create-form form label{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // background-color: #fff;
+  box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.1);
+  min-width: 500px;
+}
+
+.create-form .create-description {
+  background:none;
+}
+
+.create-description{
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
+}
+
+.create-form .create-age{
+    background:none;
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
+}
+
+.create-form .create-gender{
+    background: none;
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
+}
+
+.create-form .create-pronouns{
+    background: none;
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
+}
+
+.create-form .create-love-language{
+    background: none;
+    font-size: 20px;
+    font-weight: bold;
+    color:pink;
+}
+
+.create-form .create-location{
+    background: none;
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
+}
+
+.create-happiness{
+   color:pink;
+   font-weight: bold;
+   
+}
+
+.create-commitment{
+    color:white;
+    font-weight: bold;
+}
+
+.create-personality{
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
+
+}
+
+.create-passions{
+    font-size: 20px;
+    font-weight: bold;
+    color:pink;
+}
+
+
+.submit-button{
+    background-color:pink;
+    width:200px;
+    margin-bottom: 60px;
+}
+
+.submit-button:hover{
+    background-color: rgb(218, 133, 147);
+}
+
+input .submit-button{
+    opacity: 1;
+}
