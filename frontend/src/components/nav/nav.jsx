@@ -51,7 +51,9 @@ class NavBar extends React.Component{
       const userId = this.props.currentUser.user_id;
       const name = this.props.currentUser.name
       console.log('link history',this.props.history)
-      if(this.props.loggedIn){
+      if (!this.props.currentUser) {
+        return null 
+      } else if (this.props.loggedIn){
          return(
               <div className='nav'>
 
@@ -65,7 +67,7 @@ class NavBar extends React.Component{
                                 <div className='profile-name'>
                                       <div><img className='navbar-img' 
                                             onClick={()=> (this.props.history.push(`/users/${userId}`))} 
-                                            src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png">
+                                            src={this.props.currentUser.imageUrl}>
                                        </img></div>
                                       
                                   

@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import MessagingPage from './messaging_page'
 import { fetchMessages } from '../../actions/message_actions';
 import { getMatches } from '../../actions/user_profile_actions';
+import { getCurrentUserProfile } from '../../actions/user_profile_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -13,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return{
     fetchMessages: (users) => dispatch(fetchMessages(users)),
-    getMatches: (id) => dispatch(getMatches(id))
+    getMatches: (id) => dispatch(getMatches(id)),
+    getCurrentUserProfile: (id) => dispatch(getCurrentUserProfile(id))
   }
 }
 

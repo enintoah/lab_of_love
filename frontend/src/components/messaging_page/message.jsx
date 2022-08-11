@@ -37,7 +37,7 @@ class Message extends React.Component {
   checkOwnerButtons() {
     if (this.props.message.sender === this.props.currentUser.id) {
       return (
-        <div>
+        <div className="currentUser-message-buttons" >
           <button onClick={this.beginEdit}>Edit</button>
           <button onClick={this.deleteMessage} value={this.props.message._id}>Delete</button>
         </div>
@@ -48,6 +48,8 @@ class Message extends React.Component {
   checkOwner() {
     if (this.props.message.sender === this.props.currentUser.id) {
       return "currentUser"
+    } else {
+      return "received-message"
     }
   }
 
@@ -65,15 +67,17 @@ class Message extends React.Component {
     if (!this.props.message.type) {
       return (
         <div className={this.checkOwner()}>
-          <h2>{this.props.message.message}</h2>
           {this.checkOwnerButtons()}
+          <h2>{this.props.message.message}</h2>
         </div>
       )
     } else {
       return (
-        <div>
-          <textarea value={this.state.body} onChange={this.updateState} cols="30" rows="10"></textarea>
-          <button onClick={this.sendEdited}>Send</button>
+        <div className="edit-messages-textarea">
+          <div className="edit-textarea-div">
+            <textarea value={this.state.body} onChange={this.updateState} cols="30" rows="10"></textarea>
+          </div>
+          <button onClick={this.sendEdited}>Update</button>
         </div>
       )
     }
