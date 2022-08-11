@@ -7,35 +7,144 @@
   position: absolute;
   bottom: 0;
   margin-bottom: 1%;
+  // display: flex;
+  // justify-content: center;
+  // margin-right: 20px;
 }
 
 .chatbox-textarea > textarea {
   resize: none;
   width: 45vw;
-  height: 13vh;
+  height: 11vh;
+  margin-left: 30px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.chatbox-textarea{
+  height: 17%;
+  max-height: 17%;
+}
+
+.chatbox-textarea > button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 15px;
+  margin-right: 10px;
 }
 
 .chatbox-all {
   overflow: hidden;
   width:100%;
+  background-color: rgb(214, 160, 11);
 }
 
 .chatbox-messages {
-  height: 71vh;
+  height: 80%;
+  max-height: 80%;
   overflow-x: hidden;
   overflow-y: scroll;
   display: flex;
   flex-direction: column-reverse;
   background-color: rgb(214, 160, 11);
   margin-bottom: 5%;
+  // align-items: flex-end;
 }
 
 .currentUser {
   position: relative;
   right: 0;
+  // background-color: ;
+  margin: 3px;
+}
+
+.received-message{
+  position: relative;
+  left: 0;
+  margin: 3px;
+}
+
+.currentUser > h2, .received-message > h2 {
+  padding: 5px;
+  font-size: 20px;
+  line-height:25px;
+}
+
+
+
+.chatbox-all{
+  height: 100%;
+  max-height: 92vh;
+}
+
+.received-message h2{
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 1px;
+  background-color: rgb(226, 195, 18);
+  max-width: 70%;
+  word-wrap: break-word;
+  width: fit-content;
+}
+
+.currentUser h2{
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 1px;
+  background-color: aqua;
+  max-width: 40vw;
+  width: auto;
+  word-wrap: break-word;
 }
 
 .chatbox-messages > .currentUser {
   display: flex;
   justify-content: flex-end;
+}
+
+// .currentUser-message-buttons {
+//   display: none;
+// }
+
+.currentUser-message-buttons:hover {
+  display: block;
+}
+
+.currentUser > h2:hover {
+  .currentUser-message-buttons {
+    display: block;
+  }
+}
+
+.edit-messages-textarea > button {
+  height: 25px;
+  // position: absolute;
+  // margin-top: 50px;
+  // z-index: 20;
+  // float: left;
+  margin-left: 44vw;
+  margin-top: 2px;
+}
+
+// .edit-messages-textarea {
+  // display: flex;
+  // flex-direction: column;
+  // align-content: flex-end;
+  // justify-content: flex-end;
+  // margin-left: 15vw;
+// }
+
+.edit-textarea-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+.edit-textarea-div > textarea{
+  height: 80px;
+  width: 40vw;
+  // z-index: 1;
+  // position: relative;
 }

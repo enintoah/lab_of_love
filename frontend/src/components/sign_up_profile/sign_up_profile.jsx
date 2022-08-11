@@ -187,7 +187,7 @@ class CreateProfile extends React.Component{
                                 </div>    
                             </label> 
 
-                  <input type="submit" className='submit-button' />
+                  <input type="submit" className='submit-button-create' />
             </form>
         </div>
      )

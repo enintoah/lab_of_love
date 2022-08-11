@@ -112,16 +112,16 @@ select{
 }
 
 
-.submit-button{
+.submit-button-create{
     background-color:pink;
     width:200px;
     margin-bottom: 60px;
 }
 
-.submit-button:hover{
+.submit-button-create:hover{
     background-color: rgb(218, 133, 147);
 }
 
-input .submit-button{
+input .submit-button-create{
     opacity: 1;
 }
