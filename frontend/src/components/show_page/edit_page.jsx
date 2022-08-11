@@ -133,20 +133,20 @@ class Edit extends React.Component{
                                     onChange={this.update("location")}/>
                                 </label><br /><br />
                                 <div className="happiness">
-                                    <label>Happiness Level:
+                                    <label className="edit-input">Happiness Level:
                                         <input type="range" min={1} max={100} value={parseInt(this.state.happinessLevel)}
                                         className="slider"  
                                         onChange={this.update("happinessLevel")}/>
                                     </label>
                                 </div><br />
                                 <div className="commitment">
-                                    <label>Commitment Level:
+                                    <label className="edit-input">Commitment Level:
                                         <input type="range" min={1} max={100} value={parseInt(this.state.commitmentLevel)} 
                                         className="slider" 
                                         onChange={this.update("commitmentLevel")} />
                                     </label>
                                 </div><br /><br />
-                                <input type="submit" /><br /><br />
+                                <input type="submit" value='save' className="edit-save-button"/><br /><br />
                             </form>
                         </div>
                     </div>

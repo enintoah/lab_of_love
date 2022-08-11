@@ -1,24 +1,31 @@
 .create-form{
   background-image: url('https://pbs.twimg.com/media/ExaTwqqWQAM6s9m?format=jpg&name=large');
+ 
 }
 
 .create-form form{
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .create-form .create-name{
   background: none;
 }
 .create-name{
+    margin-top: 40px;
     font-size: 20px;
     font-weight: bold;
     color:whitesmoke;
 }
+
+.create-name input{
+     height:30px;
+}
 textarea{
   resize:none;
-  width:400px;
+  width:600px;
   z-index:44;
   opacity: 0.8;
   border-radius:15px 15px 15px 15px
@@ -30,15 +37,15 @@ input{
 }
 select{
     opacity: 0.8;
-    border-radius:12px 12px 12px 12px
+    border-radius:12px 12px 12px 12px;
+    cursor: pointer;
+    
 }
 .create-form form label{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // background-color: #fff;
-  box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.1);
   min-width: 500px;
 }
 
@@ -58,6 +65,15 @@ select{
     font-weight: bold;
     color:white;
 }
+.input-age{
+    width:50px;
+}
+.gender-pronouns{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+}
 
 .create-form .create-gender{
     background: none;
@@ -67,10 +83,12 @@ select{
 }
 
 .create-form .create-pronouns{
+
     background: none;
     font-size: 20px;
     font-weight: bold;
     color:white;
+   
 }
 
 .create-form .create-love-language{
@@ -98,6 +116,11 @@ select{
     font-weight: bold;
 }
 
+.slider{
+    width: 200px;
+    cursor: pointer;
+}
+
 .create-personality{
     font-size: 20px;
     font-weight: bold;
@@ -111,17 +134,30 @@ select{
     color:pink;
 }
 
+.passion-inputs input{
+     width:240px;
+     height: 30px;
+}
+
+.personality-inputs input{
+    width:240px;
+    height: 30px;
+}
 
 .submit-button-create{
     background-color:pink;
     width:200px;
+    height: 40px;
     margin-bottom: 60px;
+    cursor: pointer;
 }
 
 .submit-button-create:hover{
     background-color: rgb(218, 133, 147);
+    
 }
 
-input .submit-button-create{
+
+.submit-create input {
     opacity: 1;
 }
