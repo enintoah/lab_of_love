@@ -121,21 +121,11 @@
 
 .edit-messages-textarea > button {
   height: 25px;
-  // position: absolute;
-  // margin-top: 50px;
-  // z-index: 20;
-  // float: left;
   margin-left: 44vw;
   margin-top: 2px;
 }
 
-// .edit-messages-textarea {
-  // display: flex;
-  // flex-direction: column;
-  // align-content: flex-end;
-  // justify-content: flex-end;
-  // margin-left: 15vw;
-// }
+
 
 .edit-textarea-div {
   display: flex;
@@ -145,6 +135,4 @@
 .edit-textarea-div > textarea{
   height: 80px;
   width: 40vw;
-  // z-index: 1;
-  // position: relative;
 }
