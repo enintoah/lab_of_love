@@ -131,6 +131,7 @@ class CreateProfile extends React.Component{
              
                     <label className="create-pronouns">Pronouns:<br />
                                 <select onChange={this.update('pronouns')} name="pronouns" value='{this.state.pronouns}'>
+                                   <option value="none" selected disabled hidden>Select an Option</option>
                                     <option value="he/him">he/him</option>
                                     <option value="she/her">she/her</option>
                                     <option value="ze/hir">ze/hir</option>
@@ -139,8 +140,9 @@ class CreateProfile extends React.Component{
                                 </select>
                       </label><br /><br />
 
-                    <label className="create-love-language">Love Language:<br /><br />
+                    <label className="create-love-language">Love Language:<br />
                                 <select onChange={this.update('loveLanguage')} name="languages" value={this.state.loveLanguage}>
+                                    <option value="none" selected disabled hidden>Select an Option</option>
                                     <option value="words of affirmation">words of affirmation</option>
                                     <option value="quality time">quality time</option>
                                     <option value="receiving gifts">receiving gifts</option>
@@ -173,7 +175,7 @@ class CreateProfile extends React.Component{
                                 </label>
                        </div><br /><br />
 
-                       <label className="create-passions">Passions:
+                       <label className="create-passions"> Passions:
                                 <div className="passion-inputs">
                                     <input 
                                     type="text"
@@ -190,7 +192,7 @@ class CreateProfile extends React.Component{
                                     value={this.state.interests3}
                                     onChange={this.update("interests3")}/>
                                 </div>
-                            </label><br />
+                            </label>
 
                             <label className="create-personality">Personality:
                                 <div className="personality-inputs">
@@ -211,7 +213,7 @@ class CreateProfile extends React.Component{
                                 </div>    
                             </label> 
 
-                  <input type="submit" />
+                  <input type="submit" className='submit-button' />
             </form>
         </div>
      )

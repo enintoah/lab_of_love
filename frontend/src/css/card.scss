@@ -4,7 +4,7 @@
 
 .cards-container{
   display: flex;
-  height: 80vh;
+  height: 75vh;
   align-items: center;
   overflow-x: scroll;
   overflow-y: auto;
@@ -17,7 +17,7 @@
 }
 
 .card{
-  height: 90%;
+  height: 93%;
   aspect-ratio: 5/8;
   display: flex;
   flex-direction: column;

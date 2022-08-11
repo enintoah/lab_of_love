@@ -21,12 +21,12 @@
 }
 
 .chatbox-messages {
-  height: 75vh;
+  height: 71vh;
   overflow-x: hidden;
   overflow-y: scroll;
   display: flex;
   flex-direction: column-reverse;
-  background-color: red;
+  background-color: rgb(214, 160, 11);
   margin-bottom: 5%;
 }
 

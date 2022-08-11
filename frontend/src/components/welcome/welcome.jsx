@@ -103,7 +103,9 @@ class Welcome extends React.Component{
                             <h1 className='dev-name'>Jacob</h1>
                             <div className='dev-info'>
                                 <p>UI/UX Design</p>
-                                <div className='img-placeholder'></div>
+                                <div className='img-placeholder'>
+                                    <img src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/jacob.jpeg" />
+                                </div>
                                 <a target="_blank" href="https://github.com/Jablob44" class="fa-brands fa-github"></a>
                                 <a target="_blank" href="https://www.linkedin.com/in/tuesday-ai/" class="fa-brands fa-linkedin-in"></a>
                             </div>
