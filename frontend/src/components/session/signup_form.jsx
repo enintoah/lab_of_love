@@ -38,13 +38,6 @@ class SignupForm extends React.Component {
     });
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.signedIn === true) {
-  //     this.props.history.push('/login');
-  //   }
-
-  //   this.setState({errors: nextProps.errors})
-  // }
  handleSubmit(e) {
     e.preventDefault();
     let user = {
@@ -59,17 +52,7 @@ class SignupForm extends React.Component {
       password: this.state.password
     };  
 
-    console.log("this is the user being sent:", user);
-    console.log('this is loginUSer',loginUser)
-
-    this.props.signup(user)
-      .then(res => this.props.login(res.user))
-    //  .then((loginUser) => this.props.login(loginUser))
-    // .then(() => this.props.history.push(`/users/${user.handle}/createProfile`))
-
-      // .then(this.props.login(loginUser)
-      //   .then(this.props.history.push(`/users/${user.handle}/createProfile`)))
-   
+    this.props.signup(user);
   }
 
   redirectToWelcome() {

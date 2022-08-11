@@ -16,13 +16,13 @@ import MessagingPageContainer from './messaging_page/messaging_page_container';
 const App = () => (
     <div>
     <Switch>
-        <Route path='/welcome' component={Welcome}/>
+        <AuthRoute path='/welcome' component={Welcome}/>
         <AuthRoute path="/login" component={LoginForm}/>
         <AuthRoute path="/signup" component={SignupForm}/>
-        <Route path='/users/:user_id/createProfile' component={CreateProfile}/>
+        <ProtectedRoute path='/users/:user_id/createProfile' component={CreateProfile}/>
         <ProtectedRoute exact path="/users/:user_id" component={ShowPage}/>
         <ProtectedRoute exact path="/messaging/:match_id" component={MessagingPageContainer}/>
-        <Route exact path="/users/:user_id" component={ShowPage} />
+        <ProtectedRoute exact path="/users/:user_id" component={ShowPage} />
         <ProtectedRoute exact path="/users/:user_id/edit" component={EditPage}/>
         <ProtectedRoute exact path="/" component={MainPageContainer}/>
         <Redirect to="/welcome"/>

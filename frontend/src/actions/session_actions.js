@@ -47,20 +47,18 @@ export const login = user => dispatch => (
     
     // Upon signup, dispatch the approporiate action depending on which type of response we receieve from the backend
     export const signup = user => dispatch => (
-        // debugger
-        APIUtil.signup(user).then(() => (
-            console.log('I need to know the user here',user),
-            dispatch(receiveUserSignIn({
-                email: user.email,
-                password: user.password
-            }))
-            // this.login(user)
-            // console.log("actions login user:", user)
-        ), err => (
+        APIUtil.signup(user)
+            .then(res => {
+                const { token } = res.data;
+                localStorage.setItem('jwtToken', token);
+                APIUtil.setAuthToken(token);
+                const decoded = jwt_decode(token);
+                return dispatch(receiveCurrentUser(decoded))
+        }, err => (
             dispatch(receiveErrors(err.response.data))
         ))
     );
-    // We wrote this one earlier
+
 export const logout = () => dispatch => {
     localStorage.removeItem('jwtToken')
     APIUtil.setAuthToken(false)
