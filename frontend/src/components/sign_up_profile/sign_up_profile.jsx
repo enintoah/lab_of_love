@@ -12,12 +12,12 @@ class CreateProfile extends React.Component{
           interests1:'',
           interests2:'',
           interests3:'',
-          age:18,
+          age:'',
           gender:'',
           personality1:'',
           personality2:'',
           personality3:'',
-          loveLanguage: 'n/a',
+          loveLanguage: "you don't have a loveLanguage yet",
           imageUrl:'https://lacks-aa-dev.s3.us-west-1.amazonaws.com/profile+picture.png',
           happinessLevel:50,
           location:'',
@@ -71,7 +71,7 @@ class CreateProfile extends React.Component{
      return(
         <div className='create-form'>
             <form onSubmit={(e) =>this.handleSubmit(e)}>
-                   <label className="create-name">Name: <br />
+                   <label className="create-name">Name * <br />
                           <input 
                           type='text'
                           value={this.state.name}
@@ -79,7 +79,7 @@ class CreateProfile extends React.Component{
                           />
                     </label><br /><br />
                       
-                    <label className="create-description">Description: <br />
+                    <label className="create-description">Description * <br />
                           <textarea cols="30"
                           rows="10"
                           value={this.state.description}
@@ -87,36 +87,43 @@ class CreateProfile extends React.Component{
                           />
                     </label><br /><br />
 
-                    <label className="create-age">Age:<br />
+                    <label className="create-age">Age *<br />
                         <input type="text" 
                           value={this.state.age}
-                          onChange={this.update("age")} />
+                          onChange={this.update("age")} 
+                          className='input-age'/>
                     </label>
                     <br />
                     <br />
+                <div className='gender-pronouns'>
+                
+                          <label className='create-gender'>Gender *<br />
+                              <input type="text" 
+                                value={this.state.gender}
+                                onChange={this.update("gender")} />
+                          </label>
+                            <br />
+                            <br />
+                
+  
+                        <label className="create-pronouns">Pronouns<br />
+                                    <select onChange={this.update('pronouns')} name="pronouns" value={this.state.pronouns}>
+                                    <option value="" selected="selected" hidden="hidden">Choose here</option>
+                                        <option value="he/him">he/him</option>
+                                        <option value="she/her">she/her</option>
+                                        <option value="ze/hir">ze/hir</option>
+                                        <option value="ve/ver">ve/ver</option>
+                                        <option value="xe/xem">xe/xem</option>
+                                    </select>
+                          </label><br /><br />
+                   
+                  </div>
+                   <br />
+                   <br />
 
-                    <label className='create-gender'>Gender:<br />
-                        <input type="text" 
-                          value={this.state.gender}
-                          onChange={this.update("gender")} />
-                    </label>
-                      <br />
-                      <br />
-             
-                    <label className="create-pronouns">Pronouns:<br />
-                                <select onChange={this.update('pronouns')} name="pronouns" value='{this.state.pronouns}'>
-                                   <option value="none" selected disabled hidden>Select an Option</option>
-                                    <option value="he/him">he/him</option>
-                                    <option value="she/her">she/her</option>
-                                    <option value="ze/hir">ze/hir</option>
-                                    <option value="ve/ver">ve/ver</option>
-                                    <option value="xe/xem">xe/xem</option>
-                                </select>
-                      </label><br /><br />
-
-                    <label className="create-love-language">Love Language:<br />
+                    <label className="create-love-language">Love Language<br />
                                 <select onChange={this.update('loveLanguage')} name="languages" value={this.state.loveLanguage}>
-                                    <option value="none" selected disabled hidden>Select an Option</option>
+                                    <option value="" selected="selected" hidden="hidden">Select an option</option>
                                     <option value="words of affirmation">words of affirmation</option>
                                     <option value="quality time">quality time</option>
                                     <option value="receiving gifts">receiving gifts</option>
@@ -125,7 +132,7 @@ class CreateProfile extends React.Component{
                                 </select>
                       </label><br /><br />
                     
-                      <label className="create-location">Living In: 
+                      <label className="create-location">Living In *
                                 <br />
                                 <input 
                                 type="text"
@@ -134,7 +141,7 @@ class CreateProfile extends React.Component{
                       </label><br /><br />
 
                       <div className="create-happiness">
-                            <label>Happiness Level:
+                            <label>Happiness Level
                                 <input type="range" min={1} max={100} value={parseInt(this.state.happinessLevel)}
                                 className="slider"  
                                 onChange={this.update("happinessLevel")}/>
@@ -142,14 +149,14 @@ class CreateProfile extends React.Component{
                        </div><br />
 
                        <div className="create-commitment">
-                                <label>Commitment Level:
+                                <label>Commitment Level
                                     <input type="range" min={1} max={100} value={parseInt(this.state.commitmentLevel)} 
                                     className="slider" 
                                     onChange={this.update("commitmentLevel")} />
                                 </label>
                        </div><br /><br />
 
-                       <label className="create-passions"> Passions:
+                       <label className="create-passions"> Passions
                                 <div className="passion-inputs">
                                     <input 
                                     type="text"
@@ -168,7 +175,7 @@ class CreateProfile extends React.Component{
                                 </div>
                             </label>
 
-                            <label className="create-personality">Personality:
+                            <label className="create-personality">Personality
                                 <div className="personality-inputs">
                                     <input 
                                     type="text"
@@ -186,8 +193,9 @@ class CreateProfile extends React.Component{
                                     onChange={this.update("personality3")}/>
                                 </div>    
                             </label> 
-
-                  <input type="submit" className='submit-button' />
+                  <div className='submit-create'>
+                  <input type="submit" className='submit-button-create' value='continue' />
+                  </div>
             </form>
         </div>
      )
