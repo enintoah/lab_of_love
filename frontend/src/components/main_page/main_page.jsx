@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "../nav/nav_container";
 import Card from "./card";
+import { workaroundNewUser } from "../../util/session_api_util";
 
 
 class MainPage extends React.Component{
@@ -11,11 +12,21 @@ class MainPage extends React.Component{
     this.redirectToMessaging = this.redirectToMessaging.bind(this)
   }
 
-  componentDidMount() {
-    this.props.getCurrentUserProfile(this.props.currentUser.id) 
-    console.log('currentId',this.props.currentUser.id)
-    this.props.getMatches(this.props.currentUser.id)
+  async componentDidMount() {
+    await this.props.getMatches(this.props.currentUser.id).then(() => this.checkForNewUserMatches())
+    await this.props.getCurrentUserProfile(this.props.currentUser.id).catch(() => this.checkForNewUserProfile())
+  }
 
+  checkForNewUserProfile() {
+    if (Object.keys(this.props.currentUserProfile).length === 0) {
+      console.log('hello wolrd bitches')
+    }
+  }
+
+  checkForNewUserMatches() {
+    if (Object.keys(this.props.matches).length === 0) {
+      workaroundNewUser(this.props.currentUser.id).then(() => this.props.getMatches(this.props.currentUser.id))
+    }
   }
 
   async redirectToMessaging(e) {
