@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
 import CreateProfile from './sign_up_profile';
-import { createSignInProfile} from '../../actions/user_profile_actions';
+import { createSignInProfile } from '../../actions/user_profile_actions';
 import { login } from '../../actions/session_actions';
+import { receiveCreateProfileErrors } from '../../actions/user_profile_actions';
+
 
 const mapStateToProps = (state) =>{
      return{
         currentUser:state.session.user,
-        errors:state.errors.session,
+        errors:state.errors.UserProfile,
      }
 }
   
@@ -14,7 +16,8 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = (dispatch) =>{
     return{
        createSignInProfile: (profile) => dispatch(createSignInProfile(profile)),
-       login: user => dispatch(login(user))
+       login: user => dispatch(login(user)),
+       receiveErrors: errors => dispatch(receiveCreateProfileErrors(errors))
     }
 }
 

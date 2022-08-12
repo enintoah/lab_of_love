@@ -57,7 +57,6 @@ router.patch('/:user_id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  console.log("this shit runs :)")
   const { errors, isValid } = validateUserProfile(req.body)
 
   if (!isValid) {

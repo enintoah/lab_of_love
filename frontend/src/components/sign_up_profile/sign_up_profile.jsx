@@ -25,7 +25,8 @@ class CreateProfile extends React.Component{
           pronouns:'n/a',
            }
 
-          this.handleSubmit = this.handleSubmit.bind(this)
+          this.handleSubmit = this.handleSubmit.bind(this);
+          this.renderErrors = this.renderErrors.bind(this);
      }
 
    handleSubmit(e){
@@ -35,7 +36,7 @@ class CreateProfile extends React.Component{
         console.log('final state',this.state)
      this.props.createSignInProfile(newState)
         .then(this.props.history.push('/'))
-        .catch(err => console.log(err))
+        .catch(err => this.props.receiveErrors(err.response.data))
    }
 
   update(property){
@@ -65,6 +66,24 @@ class CreateProfile extends React.Component{
             )
        }
 
+    renderErrors() {
+        if (this.props.errors !== []) {
+            return (
+                <ul>
+                    {this.props.errors.map((err, i) => {
+                        return (
+                            <li key={i}>
+                                {err}
+                            </li>
+                        )
+                    })}
+                </ul>
+            )
+        } else {
+            return null 
+        }
+    }
+
   render(){
 
     let id = this.props.match.params.user_id
@@ -79,6 +98,8 @@ class CreateProfile extends React.Component{
                           onChange={this.update("name")}
                           />
                     </label><br /><br />
+
+                    {this.renderErrors()}
                       
                     <label className="create-description">Description * <br />
                           <textarea cols="30"

@@ -3,6 +3,7 @@ import { fetchUserProfile, fetchMatches,updateUserProfile,createUserProfile } fr
 export const RECEIVE_USER_PROFILES = "RECEIVE_USER_PROFILES"
 export const RECEIVE_USER_PROFILE = "RECEIVE_USER_PROFILE"
 export const RECEIVE_CURRENT_USER_PROFILE = "RECEIVE_CURRENT_USER_PROFILE"
+export const RECEIVE_USER_PROFILE_ERRORS = "RECEIVE_CURRENT_USER_ERRORS"
 
 export const receiveUserProfiles = (profiles) => {
   return {
@@ -22,6 +23,13 @@ export const receiveCurrentUserProfile = (profile) => {
   return {
     type: RECEIVE_CURRENT_USER_PROFILE,
     profile
+  }
+}
+
+export const receiveCreateProfileErrors = (errors) => {
+  return {
+    type: RECEIVE_USER_PROFILE_ERRORS, 
+    errors: Object.values(errors)
   }
 }
 
