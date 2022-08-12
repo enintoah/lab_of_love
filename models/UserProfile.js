@@ -5,7 +5,7 @@ const UserProfileSchema = new Schema({
   user_id: {type: Schema.Types.ObjectId, ref: 'users', required: true},
   description: {
     type: String,
-    required: true
+    // required: true
   },
   name: {
     type: String,
@@ -13,47 +13,47 @@ const UserProfileSchema = new Schema({
   },
   interests: {
     type: [String],
-    required: true
+    // required: true
   },
   age: {
     type: Number,
-    required: true,
+    // required: true,
     min: 18
   },
   gender: {
     type: String,
-    required: true
+    // required: true
   },
   personality: {
     type: [String],
-    required: true
+    // required: true
   },
   loveLanguage: {
     type: String,
-    required: true
+    // required: true
   },
   imageUrl: {
     type: String,
   },
   happinessLevel: {
     type: Number,
-    required: true,
+    // required: true,
     min: 0,
     max: 100
   },
   location: {
     type: String,
-    required: true
+    // required: true
   },
   commitmentLevel: {
     type: Number,
-    required: true,
+    // required: true,
     min: 0,
     max: 100
   },
   pronouns: {
     type: String,
-    required: true
+    // required: true
   },
 }, {
   timestamps: true

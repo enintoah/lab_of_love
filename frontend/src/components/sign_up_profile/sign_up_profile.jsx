@@ -35,6 +35,7 @@ class CreateProfile extends React.Component{
         console.log('final state',this.state)
      this.props.createSignInProfile(newState)
         .then(this.props.history.push('/'))
+        .catch(err => console.log(err))
    }
 
   update(property){
