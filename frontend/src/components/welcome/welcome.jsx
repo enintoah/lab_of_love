@@ -68,48 +68,50 @@ class Welcome extends React.Component{
                 </div>
                 {/* <a id='bottom-welcome-page'> */}
                     <div id='meet-the-devs'>
-                        <div className='dev-card'>
-                            <h1 className='dev-name'>Anthonie Lorsithong</h1>
-                            <div className='dev-info'>
-                                <p>Team Lead</p>
-                                <div className='img-placeholder anthonie'>
-                                    <img src='https://lacks-aa-dev.s3.us-west-1.amazonaws.com/anthonie.jpg'/>
+                        <h1>The Devs</h1>
+                            <div className='dev-card'>
+                                <h1 className='dev-name'>Anthonie Lorsithong</h1>
+                                <div className='dev-info'>
+                                    <p>Team Lead</p>
+                                    <div className='img-placeholder anthonie'>
+                                        <img src='https://lacks-aa-dev.s3.us-west-1.amazonaws.com/anthonie.jpg'/>
+                                    </div>
+                                    <a target="_blank" href="https://github.com/enintoah" class="fa-brands fa-github"></a>
+                                    <a target="_blank" href="https://www.linkedin.com/in/anthonie-lorsithong-551741232/" class="fa-brands fa-linkedin-in"></a>
                                 </div>
-                                <a target="_blank" href="https://github.com/enintoah" class="fa-brands fa-github"></a>
-                                <a target="_blank" href="https://www.linkedin.com/in/anthonie-lorsithong-551741232/" class="fa-brands fa-linkedin-in"></a>
                             </div>
-                        </div>
-                        <div className='dev-card'>
-                            <h1 className='dev-name'>Ignacio Herrera</h1>
-                            <div className='dev-info'>
-                                <p>Backend Designer</p>
-                                <div className='img-placeholder'></div>
-                                <a target="_blank" href="https://github.com/hherreratejos" class="fa-brands fa-github"></a>
-                                <a target="_blank" href="https://www.linkedin.com/in/ignacio-herrera-tejos-a93b80246/" class="fa-brands fa-linkedin-in"></a>
-                            </div>
-                        </div>
-                        <div className='dev-card'>
-                            <h1 className='dev-name'>Brian Lin</h1>
-                            <div className='dev-info'>
-                                <p>Frontend Lead</p>
-                                <div className='img-placeholder'>
-                                    <img src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/1590978917766.jpeg"/>
+                            <div className='dev-card'>
+                                <h1 className='dev-name'>Ignacio Herrera</h1>
+                                <div className='dev-info'>
+                                    <p>Backend Designer</p>
+                                    <div className='img-placeholder'></div>
+                                    <a target="_blank" href="https://github.com/hherreratejos" class="fa-brands fa-github"></a>
+                                    <a target="_blank" href="https://www.linkedin.com/in/ignacio-herrera-tejos-a93b80246/" class="fa-brands fa-linkedin-in"></a>
                                 </div>
-                                <a target="_blank" href="https://github.com/Opengundumstyle" class="fa-brands fa-github"></a>
-                                <a target="_blank" href="https://www.linkedin.com/in/zlin31/" class="fa-brands fa-linkedin-in"></a>
                             </div>
-                        </div>
-                        <div className='dev-card'>
-                            <h1 className='dev-name'>Jacob Justice</h1>
-                            <div className='dev-info'>
-                                <p>UI/UX Design</p>
-                                <div className='img-placeholder'>
-                                    <img src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/jacob.jpeg" />
+                            <div className='dev-card'>
+                                <h1 className='dev-name'>Brian Lin</h1>
+                                <div className='dev-info'>
+                                    <p>Frontend Lead</p>
+                                    <div className='img-placeholder'>
+                                        <img src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/1590978917766.jpeg"/>
+                                    </div>
+                                    <a target="_blank" href="https://github.com/Opengundumstyle" class="fa-brands fa-github"></a>
+                                    <a target="_blank" href="https://www.linkedin.com/in/zlin31/" class="fa-brands fa-linkedin-in"></a>
                                 </div>
-                                <a target="_blank" href="https://github.com/Jablob44" class="fa-brands fa-github"></a>
-                                <a target="_blank" href="https://www.linkedin.com/in/tuesday-ai/" class="fa-brands fa-linkedin-in"></a>
                             </div>
-                        </div>
+                            <div className='dev-card'>
+                                <h1 className='dev-name'>Jacob Justice</h1>
+                                <div className='dev-info'>
+                                    <p>UI/UX Design</p>
+                                    <div className='img-placeholder'>
+                                        <img src="https://lacks-aa-dev.s3.us-west-1.amazonaws.com/jacob.jpeg" />
+                                    </div>
+                                    <a target="_blank" href="https://github.com/Jablob44" class="fa-brands fa-github"></a>
+                                    <a target="_blank" href="https://www.linkedin.com/in/tuesday-ai/" class="fa-brands fa-linkedin-in"></a>
+                                </div>
+                            </div>
+
                     </div>
            </div>
         )

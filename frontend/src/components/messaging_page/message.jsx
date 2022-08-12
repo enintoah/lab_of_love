@@ -66,8 +66,8 @@ class Message extends React.Component {
   render() {
     if (!this.props.message.type) {
       return (
-        <div className={this.checkOwner()}>
-          {this.checkOwnerButtons()}
+        <div className={this.checkOwner()} id='current-message'>
+          <div className='side'>{this.checkOwnerButtons()}</div>
           <h2>{this.props.message.message}</h2>
         </div>
       )

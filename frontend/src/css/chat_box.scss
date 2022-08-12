@@ -136,3 +136,12 @@
   height: 80px;
   width: 40vw;
 }
+
+.side{
+  display: none;
+}
+
+#current-message:hover .side{
+   display: block;
+}
+
