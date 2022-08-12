@@ -13,33 +13,33 @@ module.exports = function validateUserProfile(data) {
   data.location = validText(data.location) ? data.location : '';
   data.pronouns = validText(data.pronouns) ? data.pronouns : '';
   
-  if (Validator.isEmpty(data.description)) {
-    errors.description = 'Description field is required'
-  }
+  // if (Validator.isEmpty(data.description)) {
+  //   errors.description = 'Description field is required'
+  // }
 
   // if (Validator.isEmpty(data.interests)) {
   //   errors.interests = 'Interests field is required'
   // }
 
-  if (Validator.isEmpty(data.gender)) {
-    errors.gender = 'Gender field is required'
-  }
+  // if (Validator.isEmpty(data.gender)) {
+  //   errors.gender = 'Gender field is required'
+  // }
 
   // if (Validator.isEmpty(data.personality)) {
   //   errors.personality = 'Personality field is required'
   // }
 
-  if (Validator.isEmpty(data.loveLanguage)) {
-    errors.loveLanguage = 'Love Language field is required'
-  }
+  // if (Validator.isEmpty(data.loveLanguage)) {
+  //   errors.loveLanguage = 'Love Language field is required'
+  // }
 
-  if (Validator.isEmpty(data.location)) {
-    errors.location = 'Location field is required'
-  }
+  // if (Validator.isEmpty(data.location)) {
+  //   errors.location = 'Location field is required'
+  // }
 
-  if (Validator.isEmpty(data.pronouns)) {
-    errors.pronouns = 'Pronouns field is required'
-  }
+  // if (Validator.isEmpty(data.pronouns)) {
+  //   errors.pronouns = 'Pronouns field is required'
+  // }
 
   // if (!Validator.isFloat(data.age, {min: 18})){
   //   errors.age = 'Age field is required'
