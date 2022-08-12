@@ -89,6 +89,17 @@ class Edit extends React.Component{
                                         onChange={this.update("interests3")}/>
                                     </div>
                                 </label><br /><br />
+
+                                <label className="edit-pronouns">Pronouns<br />
+                                    <select onChange={this.update('pronouns')} name="pronouns" value={this.state.pronouns}>
+                                    <option value="" selected="selected" hidden="hidden">Choose here</option>
+                                        <option value="he/him">he/him</option>
+                                        <option value="she/her">she/her</option>
+                                        <option value="ze/hir">ze/hir</option>
+                                        <option value="ve/ver">ve/ver</option>
+                                        <option value="xe/xem">xe/xem</option>
+                                    </select>
+                               </label><br /><br />
     
                                 <label className="age">Age:<br /><br />
                                         <input type="text" 

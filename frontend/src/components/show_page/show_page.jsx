@@ -73,6 +73,21 @@ class Show extends React.Component{
                                                 )}
                                             </ul>
                                         </div>
+                                        
+                                       <div className="personality-traits">
+                                            <h2 className="show-page-info">Passions: </h2>
+                                              <ul>
+                                                {this.props.currentUserProfile.interests.map(interest =>{
+                                                      return(
+                                                          <div>
+                                                               <h1 className="listing-show">-{interest}</h1>
+                                                          </div>
+                                                      )
+                                                }
+                                               )}
+                                               </ul>
+                                           
+                                       </div>
                                     </div>
                                 </div>
     
