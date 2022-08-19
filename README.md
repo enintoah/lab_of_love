@@ -8,6 +8,15 @@
 
 <br />
 
+## Team Members 
+* [Anthonie Lorsithong](https://github.com/enintoah) (Team Lead)
+
+* [Ignacio Herrera](https://github.com/hherreratejos) (Backend Designer)
+
+* [Brian Lin](https://github.com/Opengundumstyle) (Frontend Lead)
+
+* [Jacob Justice](https://github.com/Jablob44) (UI/UX Designer)
+
 ## Technologies Used 
 1. Express.js 
 2. React.js
