@@ -25,7 +25,7 @@ class Edit extends React.Component{
         loveLanguage:this.props.currentUserProfile.loveLanguage,
         happinessLevel:this.props.currentUserProfile.happinessLevel,
         commitmentLevel:this.props.currentUserProfile.commitmentLevel,
-        age:this.props.currentUserProfile.age.toString(),
+        age:this.props.currentUserProfile.age,
         location:this.props.currentUserProfile.location,
         user_id:this.props.currentUserProfile.user_id,
         pronouns:this.props.currentUserProfile.pronouns,

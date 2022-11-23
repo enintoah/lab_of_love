@@ -25,11 +25,11 @@ router.get('/:user_id', (req, res) => {
 
 router.patch('/:user_id', (req, res) => {
   console.log(req.body)
-  const { errors, isValid } = validateUserProfile(req.body);
+  // const { errors, isValid } = validateUserProfile(req.body);
 
-  if (!isValid) {
-    return res.status(400).json(errors)
-  }
+  // if (!isValid) {
+  //   return res.status(400).json(errors)
+  // }
 
   UserProfile.findOne({ user_id: req.params.user_id }).then(profile => {
     console.log(typeof profile.personality)
@@ -37,14 +37,14 @@ router.patch('/:user_id', (req, res) => {
     profile.interests[0] = req.body.interests1;
     profile.interests[1] = req.body.interests2;
     profile.interests[2] = req.body.interests3;
-    profile.age = req.body.age;
+    profile.age = req.body.age.toString();
     profile.gender = req.body.gender;
     profile.personality[0] = req.body.personality1;
     profile.personality[1] = req.body.personality2;
     profile.personality[2] = req.body.personality3;
     profile.loveLanguage = req.body.loveLanguage;
     profile.imageUrl = req.body.imageUrl;
-    profile.happinessLevel = req.body.happinessLevel
+    profile.happinessLevel = req.body.happinessLevel;
     profile.location = req.body.location;
     profile.commitmentLevel = req.body.commitmentLevel;
     profile.pronouns = req.body.pronouns;
