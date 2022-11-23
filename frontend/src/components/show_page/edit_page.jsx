@@ -25,7 +25,7 @@ class Edit extends React.Component{
         loveLanguage:this.props.currentUserProfile.loveLanguage,
         happinessLevel:this.props.currentUserProfile.happinessLevel,
         commitmentLevel:this.props.currentUserProfile.commitmentLevel,
-        age:this.props.currentUserProfile.age,
+        age:this.props.currentUserProfile.age.toString(),
         location:this.props.currentUserProfile.location,
         user_id:this.props.currentUserProfile.user_id,
         pronouns:this.props.currentUserProfile.pronouns,
@@ -134,14 +134,16 @@ class Edit extends React.Component{
                                 </label><br /><br />
                                 <div className="happiness">
                                     <label className="edit-input">Happiness Level:
-                                        <input type="range" min={1} max={100} value={parseInt(this.state.happinessLevel)}
+                                        {/* <input type="range" min={1} max={100} value={parseInt(this.state.happinessLevel)} */}
+                                        <input type="range" min={1} max={100} value={this.state.happinessLevel}
                                         className="slider"  
                                         onChange={this.update("happinessLevel")}/>
                                     </label>
                                 </div><br />
                                 <div className="commitment">
                                     <label className="edit-input">Commitment Level:
-                                        <input type="range" min={1} max={100} value={parseInt(this.state.commitmentLevel)} 
+                                        {/* <input type="range" min={1} max={100} value={parseInt(this.state.commitmentLevel)}  */}
+                                       < input type="range" min={1} max={100} value={this.state.commitmentLevel} 
                                         className="slider" 
                                         onChange={this.update("commitmentLevel")} />
                                     </label>
